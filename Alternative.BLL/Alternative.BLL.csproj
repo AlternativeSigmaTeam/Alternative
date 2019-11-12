@@ -9,4 +9,10 @@
     <ProjectReference Include="..\Alternative.Model\Alternative.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="DtoEntities\" />
+  </ItemGroup>
+
 </Project>

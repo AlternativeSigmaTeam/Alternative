@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Alternative.Model\Alternative.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ContainerConfigurator\" />
+  </ItemGroup>
+
 </Project>

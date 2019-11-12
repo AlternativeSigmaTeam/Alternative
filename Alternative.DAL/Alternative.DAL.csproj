@@ -8,4 +8,11 @@
     <ProjectReference Include="..\Alternative.Model\Alternative.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repository\" />
+    <Folder Include="Context\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Configurations\" />
+  </ItemGroup>
+
 </Project>

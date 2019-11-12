@@ -15,4 +15,9 @@
     <ProjectReference Include="..\Alternative.Model\Alternative.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Mapping\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
 </Project>
