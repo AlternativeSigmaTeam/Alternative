@@ -18,7 +18,7 @@ namespace Alternative.Web.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-
+            var t = 10;
             return View();
         }
 
