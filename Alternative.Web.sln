@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alternative.Web", "Alternative.Web\Alternative.Web.csproj", "{278CE3CB-CE75-41A3-B220-D1E69FB49EEA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alternative.Web", "Alternative.Web\Alternative.Web.csproj", "{278CE3CB-CE75-41A3-B220-D1E69FB49EEA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{78BA096C-3461-4188-8CE6-489BC33D2883}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alternative.Model", "Alternative.Model\Alternative.Model.csproj", "{30EC9106-756B-4765-9AE2-F0FA64F5B67E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alternative.Model", "Alternative.Model\Alternative.Model.csproj", "{30EC9106-756B-4765-9AE2-F0FA64F5B67E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alternative.DAL", "Alternative.DAL\Alternative.DAL.csproj", "{D75692FD-5D10-4EBC-AF13-4D803070E97F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alternative.DAL", "Alternative.DAL\Alternative.DAL.csproj", "{D75692FD-5D10-4EBC-AF13-4D803070E97F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alternative.BLL", "Alternative.BLL\Alternative.BLL.csproj", "{B54E23C9-B2B6-4D19-83BD-19509F87D536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alternative.BLL", "Alternative.BLL\Alternative.BLL.csproj", "{B54E23C9-B2B6-4D19-83BD-19509F87D536}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alternative.Infrastructure", "Alternative.Infrastructure\Alternative.Infrastructure.csproj", "{301120D9-0AC7-4620-B523-7FEF1DC068F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alternative.Infrastructure", "Alternative.Infrastructure\Alternative.Infrastructure.csproj", "{301120D9-0AC7-4620-B523-7FEF1DC068F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alternative.ServicesTests", "Alternative.ServicesTests\Alternative.ServicesTests.csproj", "{5D84EE43-6BA8-46AF-B6CE-0BF7427755C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alternative.ServiceTests", "Alternative.ServiceTests\Alternative.ServiceTests.csproj", "{EF0ED345-B850-4539-B9B4-EA5B7B0C11DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,16 +43,16 @@ Global
 		{301120D9-0AC7-4620-B523-7FEF1DC068F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{301120D9-0AC7-4620-B523-7FEF1DC068F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{301120D9-0AC7-4620-B523-7FEF1DC068F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5D84EE43-6BA8-46AF-B6CE-0BF7427755C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5D84EE43-6BA8-46AF-B6CE-0BF7427755C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5D84EE43-6BA8-46AF-B6CE-0BF7427755C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5D84EE43-6BA8-46AF-B6CE-0BF7427755C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF0ED345-B850-4539-B9B4-EA5B7B0C11DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF0ED345-B850-4539-B9B4-EA5B7B0C11DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF0ED345-B850-4539-B9B4-EA5B7B0C11DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF0ED345-B850-4539-B9B4-EA5B7B0C11DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5D84EE43-6BA8-46AF-B6CE-0BF7427755C4} = {78BA096C-3461-4188-8CE6-489BC33D2883}
+		{EF0ED345-B850-4539-B9B4-EA5B7B0C11DA} = {78BA096C-3461-4188-8CE6-489BC33D2883}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {689C7319-8FDB-4F64-9293-FCC60AA54370}
