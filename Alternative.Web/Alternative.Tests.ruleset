@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Alternative Tests" Description="These rules expand on the basic correctness rules to maximize the logic and framework usage errors that are reported. Consider including this rule set if one of these scenarios applies to your project or to find additional problems in your project." ToolsVersion="15.0">
+  <Include Path="Alternative.ruleset" Action="Default" />
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1001" Action="None" />
+    <Rule Id="CA1034" Action="None" />
+    <Rule Id="CA1054" Action="None" />
+    <Rule Id="CA1062" Action="None" />
+    <Rule Id="CA1063" Action="None" />
+    <Rule Id="CA1065" Action="None" />
+    <Rule Id="CA1303" Action="None" />
+    <Rule Id="CA1405" Action="None" />
+    <Rule Id="CA1704" Action="None" />
+    <Rule Id="CA1707" Action="None" />
+    <Rule Id="CA1711" Action="None" />
+    <Rule Id="CA1720" Action="None" />
+    <Rule Id="CA1806" Action="Warning" />
+    <Rule Id="CA1811" Action="None" />
+    <Rule Id="CA1816" Action="None" />
+    <Rule Id="CA1822" Action="None" />
+    <Rule Id="CA2000" Action="None" />
+    <Rule Id="CA2201" Action="None" />
+    <Rule Id="CA2204" Action="None" />
+    <Rule Id="CA2233" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="Microsoft.VisualStudio.Threading.Analyzers" RuleNamespace="Microsoft.VisualStudio.Threading.Analyzers">
+    <Rule Id="VSTHRD105" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+    <Rule Id="SA1008" Action="None" />
+  </Rules>
+  <Rules AnalyzerId="xunit.analyzers" RuleNamespace="xunit.analyzers">
+    <Rule Id="xUnit1006" Action="None" />
+  </Rules>
+</RuleSet>

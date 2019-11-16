@@ -1,14 +1,71 @@
-﻿{
-  // ACTION REQUIRED: This file was automatically added to your project, but it
-  // will not take effect until additional steps are taken to enable it. See the
-  // following page for additional information:
-  //
-  // https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/EnableConfiguration.md
-
+{
+  // IntelliSense support
   "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+
   "settings": {
+
+    "indentation": {
+      "indentationSize": 4,
+      "tabSize": 4,
+      "useTabs": false
+    },
+
+    "orderingRules": {
+      "systemUsingDirectivesFirst": true,
+      "blankLinesBetweenUsingGroups": "omit",
+      "usingDirectivesPlacement": "outsideNamespace",
+      "elementOrder": [
+        "kind",
+        "accessibility",
+        "constant",
+        "static",
+        "readonly"
+      ]
+    },
+
+    "readabilityRules": {
+      "allowBuiltInTypeAliases": false
+    },
+
     "documentationRules": {
-      "companyName": "PlaceholderCompany"
+      "companyName": "KhNURE",
+      "documentationCulture": "en-US",
+      "headerDecoration": "",
+      "copyrightText": "",
+      "fileNamingConvention": "stylecop",
+      "documentExposedElements": false,
+      "documentInterfaces": false,
+      "documentInternalElements": false,
+      "documentPrivateElements": false,
+      "documentPrivateFields": false,
+      "xmlHeader": false
+    },
+
+    "maintainabilityRules": {
+      "topLevelTypes": [
+        "class",
+        "interface",
+        "enum"
+      ]
+    },
+
+    "namingRules": {
+      "allowCommonHungarianPrefixes": true,
+      "allowedHungarianPrefixes": [
+        "or",
+        "ip",
+        "db",
+        "ws",
+        "ui",
+        "js",
+        "my",
+        "id"
+      ]
+    },
+
+    "layoutRules": {
+      "allowConsecutiveUsings": true,
+      "newlineAtEndOfFile": "allow"
     }
   }
 }
