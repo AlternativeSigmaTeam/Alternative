@@ -10,12 +10,11 @@
 
   <ItemGroup>
     <Folder Include="Migrations\" />
-    <Folder Include="Repository\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Configurations\" />
   </ItemGroup>
 
   <ItemGroup>
+  <PackageReference Include="AutoMapper" Version="9.0.0" />
   <PackageReference Include="xunit.analyzers" Version="0.10.0" />
     <PackageReference Include="Autofac" Version="4.9.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.2" />
