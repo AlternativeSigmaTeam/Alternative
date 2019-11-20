@@ -41,10 +41,8 @@ namespace Alternative.BLL.Services
             {
                 return false;
             }
-            else
-            {
-                return true;
-            }
+
+            return true;
         }
     }
 }

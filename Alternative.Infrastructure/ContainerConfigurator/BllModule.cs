@@ -11,7 +11,7 @@ namespace Alternative.Infrastructure.ContainerConfigurator
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<UserService>().As<IUserService>().InstancePerLifetimeScope();
+            builder.RegisterType<UserService>().As<IUserService>();
         }
     }
 }
