@@ -1,8 +1,10 @@
 ﻿using System;
 using Alternative.DAL.Context;
 using Alternative.Infrastructure.ContainerConfigurator;
+using Alternative.Web.Mapping;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,7 +27,8 @@ namespace Alternative.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            var connection = Configuration.GetConnectionString("AlternativeConnection");
+            //var connection = Configuration.GetConnectionString("AlternativeConnection");
+            var connection = "Server=EPUAKHAW0861;Database=AlternativeDb;Trusted_Connection=True;ConnectRetryCount=0";
             services.AddDbContext<AlternativeContext>(options => options.UseSqlServer(connection));
 
             services.Configure<CookiePolicyOptions>(options =>
@@ -35,10 +38,20 @@ namespace Alternative.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            var mappingConfig = new MapperConfiguration(mc => mc.AddProfile(new MappingProfile()));
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            var containerBuilder = new ContainerBuilder();
+            containerBuilder.RegisterModule(new InfrastructureModule());
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            var builder = ConfigureAutofac(services);
-            var container = builder.Build();
+            //var builder = ConfigureAutofac(services);
+            containerBuilder.Populate(services);
+
+            var container = containerBuilder.Build();
 
             return container.Resolve<IServiceProvider>();
         }

@@ -44,5 +44,10 @@ namespace Alternative.BLL.Services
 
             return true;
         }
+
+        public User GetUserById(Guid id)
+        {
+            return _unitOfWork.GetRepository<User>().GetSingle(x => x.Id == id);
+        }
     }
 }

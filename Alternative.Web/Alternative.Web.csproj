@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
     <PackageReference Include="xunit.analyzers" Version="0.10.0" />
     <PackageReference Include="Autofac" Version="4.9.4" />
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.1" />
@@ -27,11 +28,6 @@
     <ProjectReference Include="..\Alternative.BLL\Alternative.BLL.csproj" />
     <ProjectReference Include="..\Alternative.Infrastructure\Alternative.Infrastructure.csproj" />
     <ProjectReference Include="..\Alternative.Model\Alternative.Model.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Mapping\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 
 </Project>
