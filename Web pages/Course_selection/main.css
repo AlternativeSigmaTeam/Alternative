@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+}
+#rectanglehead {
+    width: 100%;
+    height: 146px;
+    background-color: #004660;
+}
+#logo{  
+    width: 95px;
+    height: 92px;
+    position: absolute;
+    margin-top: 27px;
+    left: 125px; 
+}
+#logotext{
+    width: 280px;
+    height: 76px; 
+    font-family: 'Roboto', 'Avenir Next Bold', 'Avenir Next';
+    font-weight: 700;
+    color: #ffffff;
+    position: absolute;
+    margin-top: 16px;
+    left: 250px; 
+}
+#choise{
+    font-family: 'Roboto', 'Avenir Heavy', 'Avenir Book', 'Avenir';
+    text-align: center; 
+    width: 100%;
+    height: 50%;
+    color: #004660;  
+}
+.hide {
+    display: none; 
+}
+.hide + label ~ div{
+    display: none;
+}
+/* оформляем текст label */
+.hide + label {
+    border-bottom: 1px dotted #004660;
+    padding: 0;
+    color: #004660;
+    cursor: pointer;
+    display: inline-block; 
+}
+/* вид текста label при активном переключателе */
+.hide:checked + label {
+    color: red;
+    border-bottom: 0;
+}
+/* когда чекбокс активен показываем блоки с содержанием  */
+.hide:checked + label + div {
+    display: block; 
+    background: #efefef;
+    -moz-box-shadow: inset 3px 3px 10px #7d8e8f;
+    -webkit-box-shadow: inset 3px 3px 10px #7d8e8f;
+    box-shadow: inset 3px 3px 10px #7d8e8f;
+    padding: 10px; 
+}
+
+/* demo контейнер */
+.demo {
+    margin: 5% 10%;
+}
+
+
+
+#enter{
+     text-align: center;
+    
+}
+#button{
+    left: 550px; 
+    height: 52px;
+    border-radius: 25px;
+    border: 1px solid #797979;
+    background-color: #004660; 
+    font-family: 'Roboto', 'Avenir Heavy', 'Avenir Book', 'Avenir';
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+}
+#button:active{
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
+}
