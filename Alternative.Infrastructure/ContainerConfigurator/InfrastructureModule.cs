@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Autofac;
+﻿using Autofac;
 
 namespace Alternative.Infrastructure.ContainerConfigurator
 {
-    class InfrastructureModule :Module
+    public class InfrastructureModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {

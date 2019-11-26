@@ -1,8 +1,10 @@
 ﻿using System;
 using Alternative.DAL.Context;
 using Alternative.Infrastructure.ContainerConfigurator;
+using Alternative.Web.Mapping;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -35,10 +37,20 @@ namespace Alternative.Web
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            var mappingConfig = new MapperConfiguration(mc => mc.AddProfile(new MappingProfile()));
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
+            var containerBuilder = new ContainerBuilder();
+            containerBuilder.RegisterModule(new InfrastructureModule());
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            var builder = ConfigureAutofac(services);
-            var container = builder.Build();
+            //var builder = ConfigureAutofac(services);
+            containerBuilder.Populate(services);
+
+            var container = containerBuilder.Build();
 
             return container.Resolve<IServiceProvider>();
         }

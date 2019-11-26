@@ -19,6 +19,8 @@ namespace Alternative.DAL.Repository
         public SqlRepository(AlternativeContext context)
         {
             _context = context;
+            _set = context.Set<T>();
+
         }
 
         public IEnumerable<T> GetMany(Expression<Func<T, bool>> filter = null, Func<IEnumerable<T>, IOrderedEnumerable<T>> orderBy = null, params Expression<Func<T, object>>[] includes)
