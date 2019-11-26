@@ -1,0 +1,172 @@
+body{
+    margin: 0;
+    background-color: #fcfcfc;
+}
+
+.signForm{
+    display: block;
+    position: relative;
+    width: 30%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    border: solid 2px;
+    border-color: #004660;
+    border-radius: 10px;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+.formName{
+    padding-left: 10%;
+    padding-top: 5%;
+    padding-right: 10%;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #004660;
+}
+
+.signUpText{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    font-weight: 300;
+    color: 333333;
+    opacity: .7;
+}
+
+.g-signin2{
+    display: block;
+    position: relative;
+    width: 30%;
+    height: 45px;
+    margin-left: 10%;
+    margin-top: 5%;
+    margin-bottom: 10%;;
+    border-radius: 25px;
+    color: white;
+    font-weight: 500;
+    font-size: 20px;
+    outline: none;
+}
+
+header{
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0;
+    height: 130px;
+    background-color: #004660;
+}
+
+.logo{
+    display: block;
+    position: absolute;
+    margin-left: 10%;
+    width: 90px;
+    margin-top: 20px;
+}
+
+.logoText{
+    display: block;
+    position: absolute;
+    margin-left: 18%;
+    width: 20%;
+    
+    font-family: Roboto,sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;   
+}
+
+content{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.alternativeBlock{
+    width: 70%;
+    padding: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+.alternative{
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    height: 130px;
+    min-width:200px;
+    min-height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    
+    background-color: rgba(5, 191, 38, 0.5);
+    opacity: .8;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 40px;
+}
+
+.priority{
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    margin-left: 5%;
+    margin-top: 4%;
+    border: none;
+    border-radius: 15px;;
+    background-color: #004660;
+    outline: none;
+    
+    
+    color: white;
+    text-align: right;
+    font-family: Roboto,sans-serif;
+    font-size: 30px;
+    font-weight: 400; 
+}
+
+.name{
+    margin: 0;
+    display: inline-block;
+    position: relative;
+    padding-left: 1%;
+    padding-top: 4%;
+    
+    font-family: Roboto,sans-serif;
+    font-size: 30px;
+    font-weight: 400;  
+}
+
+.description{
+    display: inline;
+    position: relative;
+    padding-left: 25%;
+    padding-top: 5%;
+   
+    text-decoration: none;
+    font-family: Roboto,sans-serif;
+    font-size: 30px;
+    color: black;
+    font-weight: 400;  
+}
+
+.teacher{
+    display: inline;
+    position: relative;
+    padding-left: 20%;
+    padding-top: 5%;
+    
+    text-decoration: none;
+    font-family: Roboto,sans-serif;
+    font-size: 30px;
+    color: black;
+    font-weight: 400;  
+}
