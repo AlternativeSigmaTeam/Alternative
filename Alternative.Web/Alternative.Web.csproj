@@ -6,6 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Style\**" />
+    <Content Remove="Views\Style\**" />
+    <EmbeddedResource Remove="Views\Style\**" />
+    <None Remove="Views\Style\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
     <PackageReference Include="xunit.analyzers" Version="0.10.0" />
