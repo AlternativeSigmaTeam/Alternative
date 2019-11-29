@@ -8,11 +8,32 @@ namespace Alternative.Web.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            return this.View();
         }
+
+        public IActionResult SignIn()
+        {
+            return this.View();
+        }
+
+        public IActionResult Speciality()
+        {
+            return this.View();
+        }
+
         public IActionResult Course()
         {
-            return View();
+            return this.View();
+        }
+
+        public IActionResult PickAlternative()
+        {
+            return this.View();
+        }
+
+        public IActionResult Description()
+        {
+            return this.View();
         }
         public IActionResult About()
         {
