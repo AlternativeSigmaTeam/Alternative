@@ -68,6 +68,12 @@ body{
     color: white;
 }
 
+.but{
+    margin-bottom: 12px;
+    margin-left: 700px;
+    margin-top: 50px;
+    position: absolute;
+}
 .contente {
     display: none;
     width: 200px;
