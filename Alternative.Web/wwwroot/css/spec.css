@@ -5,6 +5,10 @@
     display: block;
 }
 
+body{
+    margin: 0;
+}
+
 .logo {
     display: block;
     position: absolute;
@@ -51,6 +55,7 @@
     margin-left: 50px;
     background-color: #f6f6f6;
     padding: 12px;
+    font-family: Roboto, sans-serif;
     text-decoration: none;
     font-size: 18px;
     color: black;
@@ -79,13 +84,11 @@ ul#myUL a.current {
     color: white;
     text-decoration: underline;
 }
-#enter{
-     text-align: center;
-     margin-top: 500px;
-}
-#button{
-    left: 550px; 
-    height: 52px;
+
+#btn{
+    position: absolute;
+    margin-left: 65%;
+    margin-top: 3%;
     border-radius: 25px;
     border: 1px solid #797979;
     background-color: #004660; 
@@ -94,7 +97,7 @@ ul#myUL a.current {
     color: #ffffff;
     text-align: center;
 }
-#button:active{
+#btn:active{
     background: rgb(33,147,90);
     box-shadow: 0 3px rgb(33,147,90) inset;
 }

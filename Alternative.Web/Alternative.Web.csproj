@@ -37,4 +37,6 @@
     <ProjectReference Include="..\Alternative.Model\Alternative.Model.csproj" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties stylecop1_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 </Project>

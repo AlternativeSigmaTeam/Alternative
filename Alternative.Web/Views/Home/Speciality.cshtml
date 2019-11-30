@@ -9,22 +9,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="~/css/spec.css">
+    <link rel="stylesheet" href="~/css/spec.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
     <script src="~/js/search.js"></script>
 </head>
 
 <body>
-
     <header>
-        <img class="logo" src="~/images/logo.png">
+        <img class="logo" src="~/images/logo.png" />
         <p class="logoText">ВЫБОР АЛЬТЕРНАТИВ</p>
         <div id="rectanglehead"></div>
     </header>
 
+    <a href="/Home/Course" class="btn">Дальше</a>
 
     <input type="text" onkeyup="myFunction()" id="myInput" placeholder="Поиск специальностей">
-
     <ul id="myUL">
         <li><a id="link" href="#" onclick="this.className+=' current';">ВПВПС</a></li>
         <li><a href="#" onclick="this.className+=' current';">ВПС</a></li>
@@ -38,11 +37,7 @@
         <li><a href="#" onclick="this.className+=' current';">ІТП</a></li>
         <li><a href="#" onclick="this.className+=' current';">ПІ</a></li>
     </ul>
-    <div class="enter">
-        <form action="/Home/Course">
-            <input id="button" type="submit" value="  ДАЛЬШЕ  ">
-        </form>
-    </div>
+
 </body>
 
 </html>
