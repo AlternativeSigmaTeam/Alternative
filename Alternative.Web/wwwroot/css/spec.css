@@ -85,11 +85,13 @@ ul#myUL a.current {
     text-decoration: underline;
 }
 
-#btn{
+#button{
     position: absolute;
     margin-left: 65%;
     margin-top: 3%;
-    border-radius: 25px;
+    width: 200px;
+    height: 60px;
+    border-radius: 250px;
     border: 1px solid #797979;
     background-color: #004660; 
     font-family: 'Roboto', 'Avenir Heavy', 'Avenir Book', 'Avenir';
@@ -97,7 +99,7 @@ ul#myUL a.current {
     color: #ffffff;
     text-align: center;
 }
-#btn:active{
+#button:active{
     background: rgb(33,147,90);
     box-shadow: 0 3px rgb(33,147,90) inset;
 }
