@@ -38,11 +38,8 @@ namespace Alternative.Web
 
             services.AddAuthentication().AddGoogle(o =>
             {
-                IConfigurationSection googleAuthNSection =
-                    Configuration.GetSection("Authentication:Google");
-
-                o.ClientId = googleAuthNSection["ClientId"];
-                o.ClientSecret = googleAuthNSection["ClientSecret"];
+                o.ClientId = "819887038148-tm0q96ok3osh6jjg0ljic1ptbm9ga0le.apps.googleusercontent.com";
+                o.ClientSecret = "dIGbnK-ZoF1iqhN06uJgsThI";
             });
 
             services.Configure<CookiePolicyOptions>(options =>
