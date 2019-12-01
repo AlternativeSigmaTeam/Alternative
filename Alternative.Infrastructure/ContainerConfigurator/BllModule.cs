@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Alternative.BLL.Interfaces;
+﻿using Alternative.BLL.Interfaces;
 using Alternative.BLL.Services;
 using Autofac;
 

@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="2.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
     <PackageReference Include="xunit.analyzers" Version="0.10.0" />
     <PackageReference Include="Autofac" Version="4.9.4" />
@@ -37,6 +38,10 @@
     <ProjectReference Include="..\Alternative.Model\Alternative.Model.csproj" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties stylecop1_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Views\Manage\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>

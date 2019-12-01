@@ -2,16 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
 using Alternative.DAL.Context;
 using Alternative.DAL.Interfaces;
-using Alternative.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Alternative.DAL.Repository
 {
     public class SqlRepository<T> : IRepository<T>
-        where T : BaseEntity
+        where T : class
     {
         private readonly AlternativeContext _context;
         private readonly DbSet<T> _set;
@@ -45,9 +43,8 @@ namespace Alternative.DAL.Repository
             return entities.ToList();
         }
 
-        public void Delete(Guid entityId)
+        public void Delete(T entity)
         {
-            var entity = (T)_set.Where(x => x.Id == entityId);
             this._set.Remove(entity);
         }
 

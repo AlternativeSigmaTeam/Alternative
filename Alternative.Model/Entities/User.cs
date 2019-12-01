@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
 
 namespace Alternative.Model.Entities
 {
-    public class User : BaseEntity
+    public class User : IdentityUser<Guid>
     {
         public string FullName { get; set; }
 

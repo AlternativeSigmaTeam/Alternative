@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
+using Microsoft.AspNetCore.Identity;
 
 namespace Alternative.Model.Entities
 {
-    public class Role : BaseEntity
+    public class Role : IdentityRole<Guid>
     {
         public string Name { get; set; }
     }

@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Alternative.DAL.Context;
+﻿using Alternative.DAL.Context;
 using Alternative.DAL.Interfaces;
-using Alternative.Model.Entities;
 
 namespace Alternative.DAL.UnitOfWork
 {
@@ -24,7 +20,7 @@ namespace Alternative.DAL.UnitOfWork
             this._context.SaveChanges();
         }
 
-        public IRepository<T> GetRepository<T>() where T : BaseEntity
+        public IRepository<T> GetRepository<T>() where T : class
         {
             return repositoryFactory.GetRepository<T>();
         }
