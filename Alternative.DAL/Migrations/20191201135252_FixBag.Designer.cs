@@ -4,14 +4,16 @@ using Alternative.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Alternative.DAL.Migrations
 {
     [DbContext(typeof(AlternativeContext))]
-    partial class AlternativeContextModelSnapshot : ModelSnapshot
+    [Migration("20191201135252_FixBag")]
+    partial class FixBag
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,17 +81,17 @@ namespace Alternative.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("832e3a81-bfb2-42d2-bbdb-20e6cc091ccd"),
+                            Id = new Guid("ae543975-27c6-4d8a-92db-eb2e35be7e12"),
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = new Guid("e7551d0b-80d9-415e-8c77-06185bdc782e"),
+                            Id = new Guid("a41b1fd3-ef53-4411-a45d-7015071a19f4"),
                             Name = "Student"
                         },
                         new
                         {
-                            Id = new Guid("7ca42614-0d09-4a88-ab9b-1bd0b81cc8d1"),
+                            Id = new Guid("e5e1d2b8-56ca-4350-a620-35e12758784d"),
                             Name = "Teacher"
                         });
                 });
@@ -142,6 +144,8 @@ namespace Alternative.DAL.Migrations
                     b.Property<string>("FullName");
 
                     b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Password");
 
                     b.Property<Guid>("RoleId");
 

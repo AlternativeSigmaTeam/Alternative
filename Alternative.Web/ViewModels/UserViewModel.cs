@@ -16,7 +16,7 @@ namespace Alternative.Web.ViewModels
 
         public string Email { get; set; }
 
-        public Faculty Faculty { get; set; }
+        public Specialty Specialty { get; set; }
 
         public Role Role { get; set; }
     }

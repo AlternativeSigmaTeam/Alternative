@@ -4,14 +4,16 @@ using Alternative.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Alternative.DAL.Migrations
 {
     [DbContext(typeof(AlternativeContext))]
-    partial class AlternativeContextModelSnapshot : ModelSnapshot
+    [Migration("20191201135015_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,17 +81,17 @@ namespace Alternative.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("832e3a81-bfb2-42d2-bbdb-20e6cc091ccd"),
+                            Id = new Guid("c6f8b750-c830-4788-a0db-6021723411d0"),
                             Name = "Admin"
                         },
                         new
                         {
-                            Id = new Guid("e7551d0b-80d9-415e-8c77-06185bdc782e"),
+                            Id = new Guid("cab3e5b4-63ac-49e0-a511-041de73e9f3a"),
                             Name = "Student"
                         },
                         new
                         {
-                            Id = new Guid("7ca42614-0d09-4a88-ab9b-1bd0b81cc8d1"),
+                            Id = new Guid("21c727c6-19c7-4aa1-b296-f0fa4a581048"),
                             Name = "Teacher"
                         });
                 });
@@ -100,7 +102,11 @@ namespace Alternative.DAL.Migrations
 
                     b.Property<Guid>("CourseId");
 
+                    b.Property<Guid>("Id");
+
                     b.HasKey("SpecialtyId", "CourseId");
+
+                    b.HasAlternateKey("Id");
 
                     b.HasIndex("CourseId");
 
@@ -142,6 +148,8 @@ namespace Alternative.DAL.Migrations
                     b.Property<string>("FullName");
 
                     b.Property<bool>("IsDeleted");
+
+                    b.Property<string>("Password");
 
                     b.Property<Guid>("RoleId");
 
