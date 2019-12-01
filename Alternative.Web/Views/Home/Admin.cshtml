@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Admin pages";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AdminPage</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/signin.css">
+</head>
+<body>
+    <header>
+        <img class="logo" src="~/images/logo.png" />
+        <p class="logoText">
+            Страница Админа
+            Админ - Name
+        </p>
+        <div id="rectanglehead"></div>
+    </header>
+
+    <content>
+        <div class="funcBlock">
+            <button class="addAlternativeBtn">
+                <a href="#addAlternativeBlock">Добавить альтернативу</a>
+            </button>
+            <button class="updateAlternativeBtn">
+                <a href="#updateAlternativeBlock">Обновить альтернативу</a>
+            </button>
+            <button class="deleteAlternativeBtn">
+                <a href="#deleteAlternativeBlock">Удалить альтернативу</a>
+            </button>
+        </div>
+
+        <div id="addAlternativeBlock">
+            <p class="addInfoText">Введите название,описание и преподавателя альтернативы которую вы хотели бы добавить</p>
+            <div class="addBlock">
+                <label class="alternativeName"> Name </label>
+                <input type="text" name="" class="alternativeNameInput">
+                <label class="alternativeDescr"> Description </label>
+                <input type="text" name="" class="alternativeDescrInput">
+                <label class="alternativeTeacher"> Teacher </label>
+                <input type="text" name="" class="alternativeTeacherInput">
+                <button name="" value="add" class="addBtn">Добавить</button>
+            </div>
+        </div>
+
+        <div id="updateAlternativeBlock">
+            <p class="updateInfoText">Введите название альтернативы информацию о которой вы хотели бы обновить</p>
+            <input type="text" name="searchByName" class="searchByName" value="Название...">
+            <div class="updateBlock">
+                <label class="alternativeName"> Name </label>
+                <input type="text" name="" class="alternativeNameInput">
+                <label class="alternativeDescr"> Description </label>
+                <input type="text" name="" class="alternativeDescrInput">
+                <label class="alternativeTeacher"> Teacher </label>
+                <input type="text" name="" class="alternativeTeacherInput">
+                <button name="" value="update" class="addBtn">Обновить</button>
+            </div>
+        </div>
+
+        <div id="deleteAlternativeBlock">
+            <p class="deleteInfoText">Введите название альтернативы которую вы хотели бы удалить</p>
+            <input type="text" name="deleteByName" class="deleteByName" value="Название...">
+            <button name="" value="update" class="deleteBtn">Удалить альтернативу</button>
+        </div>
+
+    </content>
+</body>
+</html>
