@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Alternative.DAL.EntityConfigurations
 {
-    public class SubjectConfiguration : IEntityTypeConfiguration<Subject>
+    public class SpecialtyConfiguration : IEntityTypeConfiguration<Specialty>
     {
-        public void Configure(EntityTypeBuilder<Subject> builder)
+        public void Configure(EntityTypeBuilder<Specialty> builder)
         {
-            builder.ToTable("Subject");
+            builder.ToTable("Specialty");
         }
     }
 }
