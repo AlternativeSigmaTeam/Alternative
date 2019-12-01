@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Alternative.Model.Entities;
+﻿using Alternative.Model.Entities;
 using Alternative.Web.ViewModels;
 using AutoMapper;
 

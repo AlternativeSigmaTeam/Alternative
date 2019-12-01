@@ -1,6 +1,5 @@
 ﻿
 using Alternative.DAL.Interfaces;
-using Alternative.Model.Entities;
 
 namespace Alternative.DAL.UnitOfWork
 {
@@ -8,6 +7,6 @@ namespace Alternative.DAL.UnitOfWork
     {
         void Commit();
 
-        IRepository<T> GetRepository<T>() where T :  BaseEntity;
+        IRepository<T> GetRepository<T>() where T :  class;
     }
 }

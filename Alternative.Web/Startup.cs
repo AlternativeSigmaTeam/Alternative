@@ -1,6 +1,7 @@
 ﻿using System;
 using Alternative.DAL.Context;
 using Alternative.Infrastructure.ContainerConfigurator;
+using Alternative.Model.Entities;
 using Alternative.Web.Mapping;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
@@ -8,6 +9,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -27,9 +29,21 @@ namespace Alternative.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            //var connection = Configuration.GetConnectionString("AlternativeConnection");
-            var connection = "Server=EPUAKHAW0861;Database=AlternativeDb;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = Configuration.GetConnectionString("AlternativeConnection");
             services.AddDbContext<AlternativeContext>(options => options.UseSqlServer(connection));
+
+            services.AddIdentity<User, Role>()
+                .AddEntityFrameworkStores<AlternativeContext>()
+                .AddDefaultTokenProviders();
+
+            services.AddAuthentication().AddGoogle(o =>
+            {
+                IConfigurationSection googleAuthNSection =
+                    Configuration.GetSection("Authentication:Google");
+
+                o.ClientId = googleAuthNSection["ClientId"];
+                o.ClientSecret = googleAuthNSection["ClientSecret"];
+            });
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -69,6 +83,8 @@ namespace Alternative.Web
                 app.UseHsts();
             }
 
+            app.UseAuthentication();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
@@ -77,7 +93,7 @@ namespace Alternative.Web
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=SignIn}/{id?}");
+                    template: "{controller=Account}/{action=Login}/{id?}");
             });
         }
 

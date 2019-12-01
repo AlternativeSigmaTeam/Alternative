@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Alternative.BLL.Interfaces;
 using Alternative.DAL.UnitOfWork;
 using Alternative.Model.Entities;

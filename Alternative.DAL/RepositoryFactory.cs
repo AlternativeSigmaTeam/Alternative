@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Alternative.DAL.Interfaces;
-using Alternative.Model.Entities;
+﻿using Alternative.DAL.Interfaces;
 using Autofac;
 
 namespace Alternative.DAL
@@ -16,7 +12,7 @@ namespace Alternative.DAL
             this._lifetimeScope = lifetimeScope;
         }
 
-        public IRepository<T> GetRepository<T>() where T : BaseEntity
+        public IRepository<T> GetRepository<T>() where T : class
         {
             return this._lifetimeScope.Resolve<IRepository<T>>();
         }

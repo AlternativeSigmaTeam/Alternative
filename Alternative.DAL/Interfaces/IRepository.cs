@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using Alternative.Model.Entities;
 
 namespace Alternative.DAL.Interfaces
 {
     public interface IRepository<T>
-        where T : BaseEntity
+        where T : class
     {
         void Insert(T entity);
 
         void Edit(T entity);
 
-        void Delete(Guid entityId);
+        void Delete(T entity);
 
         T GetSingle(Expression<Func<T, bool>> func = null, params Expression<Func<T, object>>[] includes);
 

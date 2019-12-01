@@ -1,10 +1,12 @@
-﻿using Alternative.DAL.EntityConfigurations;
+﻿using System;
+using Alternative.DAL.EntityConfigurations;
 using Alternative.Model.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Alternative.DAL.Context
 {
-    public class AlternativeContext : DbContext
+    public class AlternativeContext : IdentityDbContext<User, Role, Guid>
     {
         public AlternativeContext(DbContextOptions<AlternativeContext> options)
             : base(options)
@@ -33,6 +35,8 @@ namespace Alternative.DAL.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new AlternativeCoursesConfiguration());
