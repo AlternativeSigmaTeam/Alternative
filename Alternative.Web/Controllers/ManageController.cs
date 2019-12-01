@@ -196,44 +196,6 @@ namespace Alternative.Web.Controllers
             return RedirectToAction(nameof(TwoFactorAuthentication));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> EnableAuthenticator()
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
-
-            var model = new EnableAuthenticatorViewModel();
-            await LoadSharedKeyAndQrCodeUriAsync(user, model);
-
-            return View(model);
-        }
-
-        [HttpGet]
-        public IActionResult ResetAuthenticatorWarning()
-        {
-            return View(nameof(ResetAuthenticator));
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> ResetAuthenticator()
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null)
-            {
-                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-            }
-
-            await _userManager.SetTwoFactorEnabledAsync(user, false);
-            await _userManager.ResetAuthenticatorKeyAsync(user);
-            _logger.LogInformation("User with id '{UserId}' has reset their authentication app key.", user.Id);
-
-            return RedirectToAction(nameof(EnableAuthenticator));
-        }
-
         #region Helpers
 
         private void AddErrors(IdentityResult result)

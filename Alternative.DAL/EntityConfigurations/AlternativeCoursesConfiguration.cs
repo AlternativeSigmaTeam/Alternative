@@ -14,6 +14,5 @@ namespace Alternative.DAL.EntityConfigurations
                 .HasForeignKey(s => s.CourseId);
             builder.HasKey(sc => new { sc.AlternativeId, sc.CourseId });
         }
-
     }
 }
