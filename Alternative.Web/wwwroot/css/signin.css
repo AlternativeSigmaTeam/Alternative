@@ -54,7 +54,8 @@ body{
 }
 
 header{
-    position: absolute;
+    display: block;
+    position: relative;
     width: 100%;
     margin: 0;
     height: 130px;
@@ -70,7 +71,8 @@ header{
 }
 
 .logoText{
-    position: absolute;
+    display: block;
+    position: relative;
     padding-left: 18%;
     padding-top: 3%;
     margin-top: 0;
@@ -207,7 +209,6 @@ content{
     color: #004660;
     font-weight: 700;  
 }
-
 .alternativeDescription{
     display: block;
     position: relative;
@@ -396,7 +397,6 @@ content{
     outline: none;
 }
 
-
 .alternativeDescr{
     display: inline-block;
     position: relative;
@@ -411,7 +411,6 @@ content{
     color: #004660;
     font-weight: 400; 
 }
-
 .alternativeDescrInput{
     margin-left: 5%;
     min-height: 30px;
@@ -445,7 +444,6 @@ content{
     border-bottom: 2px solid;
     outline: none;
     width: 10%;
-
 }
 
 .addBtn{
