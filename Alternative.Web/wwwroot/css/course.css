@@ -80,6 +80,7 @@ body{
     font-weight: 800;
     color: #ffffff;
     text-align: center;
+    outline: none;
 }
 #button:active{
     background: rgb(33,147,90);
