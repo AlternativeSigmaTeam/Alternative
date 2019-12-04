@@ -24,17 +24,23 @@
     font-weight: 600;
 }
 
+#listofSpeciality {
+    border: none;
+    width: 20%;
+    font-size: x-large;
+    margin-left: 15%;
+    margin-top: 3%;
+}
 
 
 #searchBox {
-    width: 10%;
-    height: 3%;
-    /*300 px */
+    width: 300px;
+    height: 4%;
     font-size: 100%;
     padding: 0.1% 0.1% 0.3% 0.3%;
     border: 0.1% solid #ddd;
-    margin-left: 26%;
-    margin-top: 2%;
+    margin-left: 30%;
+    margin-top: 55px;
     position: absolute;
 }
 
@@ -45,22 +51,48 @@
     padding: 1rem 1.5rem;
     text-decoration: none;
     border-radius: 3px;
-    margin-left: 40%;
-    margin-top: 1.5%;
+    margin-left: 50%;
+    margin-top: 47px;
     width: 150px;
     text-align: center;
     opacity: 50%;
+    outline: none;
+    border-radius: 30px;
 }
 
-#listofSpeciality {
-    border: none;
-    width: 20%;
-    font-size: x-large;
-    margin-left: 15%;
-    margin-top: 3%;
+
+
+
+@media (min-width: 1050px) and (max-width: 1500px) {
+    #select {
+        position: absolute;
+        background: #004660;
+        color: white;
+        padding: 1rem 1.5rem;
+        text-decoration: none;
+        border-radius: 3px;
+        margin-left: 64%;
+        margin-top: 40px;
+        width: 150px;
+        text-align: center;
+        opacity: 50%;
+        border-radius: 30px;
+    }
+
+
+    #searchBox {
+        width: 300px;
+        height: 4%;
+        font-size: 100%;
+        padding: 0.1% 0.1% 0.3% 0.3%;
+        border: 0.1% solid #ddd;
+        margin-left: 35%;
+        margin-top: 50px;
+        position: absolute;
+    }
 }
 
-/*@media (max-width: 1000px) {
+@media (max-width: 1049px) {
 
     .logoText {
         display: block;
@@ -85,6 +117,7 @@
         width: 150px;
         text-align: center;
         opacity: 50%;
+        border-radius: 30px;
     }
 
     #listofSpeciality {
@@ -97,7 +130,6 @@
     #searchBox {
         width: 25%;
         height: 4%;
-        /*300 px */
         font-size: 100%;
         padding: 0.1% 0.1% 0.3% 0.3%;
         border: 0.1% solid #ddd;
@@ -105,29 +137,4 @@
         margin-top: 50px;
         position: absolute;
     }
-}*/
-
-.contente {
-    display: none;
-    width: 200px;
-    height: 100px;
-    background: #369;
-    text-align: center;
-    color: #fff;
-    position: absolute;
-}
-#button{
-    left: 550px; 
-    height: 52px;
-    border-radius: 25px;
-    border: 1px solid #797979;
-    background-color: #004660; 
-    font-family: 'Roboto', 'Avenir Heavy', 'Avenir Book', 'Avenir';
-    font-weight: 800;
-    color: #ffffff;
-    text-align: center;
-}
-#button:active{
-    background: rgb(33,147,90);
-    box-shadow: 0 3px rgb(33,147,90) inset;
 }
