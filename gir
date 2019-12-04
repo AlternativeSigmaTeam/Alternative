@@ -1,0 +1,249 @@
+[33mcommit 2cad9bc1cce8c6f518c3d5d0d6623393b7ced84b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: b5435f5 cb2a64c
+Author: Alexey <54531153+Leha19Aloha@users.noreply.github.com>
+Date:   Wed Dec 4 21:32:56 2019 +0200
+
+    Merge pull request #41 from AlternativeSigmaTeam/Vanda/2.0
+    
+    2.0
+
+[33mcommit cb2a64ca61bbc274415576d8e867aba33626dcfa[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Wed Dec 4 21:30:52 2019 +0200
+
+    2.0
+
+[33mcommit b5435f56f63692ee54a7068cda05ea681ef0d207[m
+Merge: c613bba 135069a
+Author: AlternativeSigmaTeam <57688652+AlternativeSigmaTeam@users.noreply.github.com>
+Date:   Wed Dec 4 20:52:33 2019 +0200
+
+    Merge pull request #40 from AlternativeSigmaTeam/Vanda/UltraFix
+    
+    UltrFix
+
+[33mcommit 135069aa0e04b1410c185f02754590be0006d9ae[m[33m ([m[1;31morigin/Vanda/UltraFix[m[33m)[m
+Merge: 45cbd63 c613bba
+Author: AlternativeSigmaTeam <57688652+AlternativeSigmaTeam@users.noreply.github.com>
+Date:   Wed Dec 4 20:51:18 2019 +0200
+
+    Merge branch 'master' into Vanda/UltraFix
+
+[33mcommit 45cbd6368e6ff7f328f24a31df1784e08648fc22[m[33m ([m[1;31morigin/Vanda/FixHeader[m[33m, [m[1;32mVanda/FixHeader[m[33m)[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Wed Dec 4 20:37:34 2019 +0200
+
+    UltrFix
+
+[33mcommit c613bbaa7e33727c06dd8dd41ed2025fb86ee250[m
+Merge: 0af10dc 74742fc
+Author: Maxim Vanda <48153030+Max1da@users.noreply.github.com>
+Date:   Wed Dec 4 19:32:59 2019 +0200
+
+    Merge pull request #38 from AlternativeSigmaTeam/Redirection-issue
+    
+    Added page redirection
+
+[33mcommit 74742fcc38237c2e6b2a20c7adbb613e21726380[m[33m ([m[1;31morigin/Redirection-issue[m[33m)[m
+Author: bohdan.lazariev <bohdan.lazariev@gmail.com>
+Date:   Tue Dec 3 21:07:14 2019 +0200
+
+    Added page redirection
+
+[33mcommit 0af10dce29f18bfed70dc5e5bce18e9d4d7e8368[m
+Merge: bfb5ebb 33f2ba0
+Author: Taldarim1 <41382312+Taldarim1@users.noreply.github.com>
+Date:   Tue Dec 3 19:28:52 2019 +0200
+
+    Merge pull request #37 from AlternativeSigmaTeam/Vanda/FixHeader
+    
+    Fix
+
+[33mcommit 33f2ba01a32663b34e9081cd02bb371f37e5e0cc[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Tue Dec 3 19:28:02 2019 +0200
+
+    Fix
+
+[33mcommit bfb5ebbeab34749afc70f2b18a6f057f16b25caf[m
+Merge: 99667e6 6aa6f76
+Author: Alexey <54531153+Leha19Aloha@users.noreply.github.com>
+Date:   Mon Dec 2 14:56:54 2019 +0200
+
+    Merge pull request #36 from AlternativeSigmaTeam/Vanda/FixHeader
+    
+    Vanda/fix header
+
+[33mcommit 6aa6f766e44faa905e922bb26a045cc053eb756f[m[33m ([m[1;31morigin/Vanda/2.0[m[33m)[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Mon Dec 2 14:55:47 2019 +0200
+
+    Fix
+
+[33mcommit cb6d00c07562777d5fe4bfdc908c09ee820bd616[m[33m ([m[1;32mVanda/2.0[m[33m)[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Mon Dec 2 14:35:29 2019 +0200
+
+    Add Admin page
+
+[33mcommit 99667e601018304a624a0f24e7ca9748a1f3b69d[m
+Merge: 958525a 8807025
+Author: AlternativeSigmaTeam <57688652+AlternativeSigmaTeam@users.noreply.github.com>
+Date:   Sun Dec 1 23:46:07 2019 +0200
+
+    Merge pull request #35 from AlternativeSigmaTeam/GoogleAuth
+    
+    Changed clientId
+
+[33mcommit 88070254d3656ef0010d8020df9363ece2cffd3d[m[33m ([m[1;31morigin/GoogleAuth[m[33m)[m
+Author: bohdan.lazariev <bohdan.lazariev@gmail.com>
+Date:   Sun Dec 1 23:44:13 2019 +0200
+
+    Changed clientId
+
+[33mcommit 958525a68890287c31143da371ef210fd25e2876[m
+Merge: 7993f43 eae5d4b
+Author: AlternativeSigmaTeam <57688652+AlternativeSigmaTeam@users.noreply.github.com>
+Date:   Sun Dec 1 23:33:25 2019 +0200
+
+    Merge pull request #34 from AlternativeSigmaTeam/GoogleAuth
+    
+    Auth fix
+
+[33mcommit eae5d4b9c27f10b70bd5d33fc4a2adc9262b70ba[m
+Author: bohdan.lazariev <bohdan.lazariev@gmail.com>
+Date:   Sun Dec 1 23:32:24 2019 +0200
+
+    Auth fix
+
+[33mcommit 7993f43e01f72a441594b0e9591006f4bd03a452[m
+Merge: 5343bab 6261ea0
+Author: AlternativeSigmaTeam <57688652+AlternativeSigmaTeam@users.noreply.github.com>
+Date:   Sun Dec 1 20:25:00 2019 +0200
+
+    Merge pull request #33 from AlternativeSigmaTeam/GoogleAuth
+    
+    Added google authorization
+
+[33mcommit 6261ea08d2346fdddbb2b87702470f59f7f09e7e[m
+Author: bohdan.lazariev <bohdan.lazariev@gmail.com>
+Date:   Sun Dec 1 20:21:11 2019 +0200
+
+    Added google authorization
+
+[33mcommit 5343bab58a6d8d1f8df36dd929d9c9ce666ea68e[m
+Merge: 8f261ba 787c537
+Author: Bohdan <44852753+Lazoror@users.noreply.github.com>
+Date:   Sun Dec 1 16:16:25 2019 +0200
+
+    Merge pull request #32 from AlternativeSigmaTeam/peretiaha/addMigrations
+    
+    Add migrations
+
+[33mcommit 787c537400dcfa90580a490be3f3b7343c134b09[m[33m ([m[1;31morigin/peretiaha/addMigrations[m[33m)[m
+Author: Maksym Peretiaha <Maksym_peretiaha@epam.com>
+Date:   Sun Dec 1 16:07:55 2019 +0200
+
+    Add migrations
+
+[33mcommit 8f261ba77846e5665819aa6824e7122fee0238e1[m
+Merge: 6fa3975 c6e9bcd
+Author: Alexey <54531153+Leha19Aloha@users.noreply.github.com>
+Date:   Sun Dec 1 14:52:33 2019 +0200
+
+    Merge pull request #31 from AlternativeSigmaTeam/Vanda/AddAndTestGAPI
+    
+    UpDate
+
+[33mcommit c6e9bcd842ec154875beec63ccb4aa4ca4ae15ea[m[33m ([m[1;31morigin/Vanda/AddAndTestGAPI[m[33m)[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Sun Dec 1 14:51:05 2019 +0200
+
+    UpDate
+
+[33mcommit 6fa39755551c2ce7f309b0ba470d635dbe976397[m
+Merge: b69cfee 8965366
+Author: AlternativeSigmaTeam <57688652+AlternativeSigmaTeam@users.noreply.github.com>
+Date:   Sun Dec 1 13:49:01 2019 +0200
+
+    Merge pull request #30 from AlternativeSigmaTeam/Vanda/AddAndTestGAPI
+    
+    Fix
+
+[33mcommit 89653661a6e47517651828d4f28c1716d09f8b3d[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Sun Dec 1 13:48:07 2019 +0200
+
+    Fix
+
+[33mcommit b69cfee581dbfd654e7af52a6ec1d0e3f1a4e34b[m
+Merge: 9f7cf52 d0e4ea5
+Author: AlternativeSigmaTeam <57688652+AlternativeSigmaTeam@users.noreply.github.com>
+Date:   Sun Dec 1 13:39:13 2019 +0200
+
+    Merge pull request #29 from AlternativeSigmaTeam/Vanda/AddAndTestGAPI
+    
+    Fix
+
+[33mcommit d0e4ea55150acb2ffd4eb8470908bed72775c7fa[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Sun Dec 1 13:38:35 2019 +0200
+
+    Fix
+
+[33mcommit 9f7cf52fd70511e7862ca7a1a5f9c028c8d8ccf4[m
+Merge: 9052134 88b656d
+Author: AlternativeSigmaTeam <57688652+AlternativeSigmaTeam@users.noreply.github.com>
+Date:   Sun Dec 1 13:21:39 2019 +0200
+
+    Merge pull request #28 from AlternativeSigmaTeam/Vanda/AddAndTestGAPI
+    
+    Add and test Google API
+
+[33mcommit 88b656df9cae56ced278f28946e80ccdd91e18eb[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Sun Dec 1 13:20:54 2019 +0200
+
+    Add and test Google API
+
+[33mcommit 9052134f8d66c57a34ada56a5a0065c4c25eb34c[m[33m ([m[1;32mVanda/Header[m[33m)[m
+Merge: 0a1bcbc 79a42fc
+Author: AlternativeSigmaTeam <57688652+AlternativeSigmaTeam@users.noreply.github.com>
+Date:   Sat Nov 30 23:41:32 2019 +0200
+
+    Merge pull request #27 from AlternativeSigmaTeam/Vanda/FixButton
+    
+    FixButton4.0
+
+[33mcommit 79a42fc57fd82089464fd98ce141ecb66bc0e3c7[m[33m ([m[1;31morigin/Vanda/FixButton[m[33m)[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Sat Nov 30 23:40:49 2019 +0200
+
+    FixButton4.0
+
+[33mcommit 0a1bcbc4963e2bba6c5e4250028c02a88ddd1c7b[m
+Merge: dc217eb 8adcca7
+Author: AlternativeSigmaTeam <57688652+AlternativeSigmaTeam@users.noreply.github.com>
+Date:   Sat Nov 30 23:34:07 2019 +0200
+
+    Merge pull request #26 from AlternativeSigmaTeam/Vanda/FixButton
+    
+    FixButton3.0
+
+[33mcommit 8adcca7fc64e5de66089d8f417a0ad0314ec2aa1[m
+Author: Макс Ванда <reumist111@gmail.com>
+Date:   Sat Nov 30 23:33:09 2019 +0200
+
+    FixButton3.0
+
+[33mcommit dc217eb29de6f0472519983eb19656207a53d049[m
+Merge: 64812e8 3437a38
+Author: Alexey <54531153+Leha19Aloha@users.noreply.github.com>
+Date:   Sat Nov 30 23:22:46 2019 +0200
+
+    Merge pull request #25 from AlternativeSigmaTeam/Vanda/FixButton
+    
+    FixButton2.0
+
+[33mcommit 3437a38c1b16a9222c997764c1ef547165f59d81[m
+Author: Макс Ванда <reumist111@gmail.com>
