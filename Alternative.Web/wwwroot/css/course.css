@@ -23,6 +23,12 @@ body{
     margin-top: 16px;
     left: 250px; 
 }
+content{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+}
 #choise{
     font-family: 'Roboto', 'Avenir Heavy', 'Avenir Book', 'Avenir';
     text-align: center; 
@@ -63,8 +69,6 @@ body{
 .demo {
     margin: 5% 10%;
 }
-
-
 
 #enter{
      text-align: center;

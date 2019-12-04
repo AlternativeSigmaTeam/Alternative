@@ -4,45 +4,79 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="~/css/spec.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
-    <script src="~/js/search.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"
+          rel="stylesheet" />
+    <script>
+        var Check = function () {
+            document.getElementById("select").disabled = false;
+            document.getElementById("select").style.opacity = "100%";
+        };
+
+        function myFunc(elem) {
+            var spec = document.getElementById("spec");
+            var countSelected = 0;
+
+            for (var i = 0; i < spec.options.length; i++) {
+                if (spec.options[i].selected) countSelected++;
+            }
+            if (countSelected >= 1) {
+                elem.selected = false;
+                alert("Больше выбирать нельзя");
+            }
+        }
+    </script>
 </head>
 
 <body>
     <header>
         <img class="logo" src="~/images/logo.png" />
-        <p class="logoText">ВЫБОР АЛЬТЕРНАТИВ</p>
+        <p class="logoText">ВЫБОР СПЕЦИАЛЬНОСТИ</p>
         <div id="rectanglehead"></div>
     </header>
+    <form action="/Home/Course">
+    <button id="select" disabled="true">Выбор курса</button>
+    </form>
+    <input type="search" id="searchBox" placeholder="Поиск специальности" />
 
-    <div id="but">
-        <form action="/Home/Course">
-            <input id="button" type="submit" title="Выберите специальность" value="ДАЛЬШЕ">
-        </form>
-    </div>
+    <select id="listofSpeciality" size="15" onclick="Check()">
+        <option onclick="myFunc(this)" value="1">ВПС</option>
+        <option onclick="myFunc(this)" value="2">КН</option>
+        <option onclick="myFunc(this)" value="3">КНТ</option>
+        <option onclick="myFunc(this)" value="4">ПЗС</option>
+        <option onclick="myFunc(this)" value="5">СПР</option>
+        <option onclick="myFunc(this)" value="6">ТДВ</option>
+        <option onclick="myFunc(this)" value="7">ІПЗ</option>
+        <option onclick="myFunc(this)" value="8">ІТП</option>
+        <option onclick="myFunc(this)" value="9">ПІ</option>
+    </select>
+    <script>
+        searchBox = document.querySelector("#searchBox");
+        listofSpeciality = document.querySelector("#listofSpeciality");
+        var when = "keyup"; //You can change this to keydown, keypress or change
 
-    <input type="text" onkeyup="myFunction()" id="myInput" placeholder="Поиск специальностей">
-
-    <ul id="myUL">
-        <li><a id="link" href="#" onclick="this.className+=' current';">ВПВПС</a></li>
-        <li><a href="#" onclick="this.className+=' current';">ВПС</a></li>
-        <li><a href="#" onclick="this.className+=' current';">КНТ</a></li>
-        <li><a href="#" onclick="this.className+=' current';">ПЗПИ</a></li>
-        <li><a href="#" onclick="this.className+=' current';">КН</a></li>
-        <li><a href="#" onclick="this.className+=' current';">ПЗС</a></li>
-        <li><a href="#" onclick="this.className+=' current';">СПР</a></li>
-        <li><a href="#" onclick="this.className+=' current';">ТДВ</a></li>
-        <li><a href="#" onclick="this.className+=' current';">ІПЗ</a></li>
-        <li><a href="#" onclick="this.className+=' current';">ІТП</a></li>
-        <li><a href="#" onclick="this.className+=' current';">ПІ</a></li>
-    </ul>
-
+        searchBox.addEventListener("keyup", function (e) {
+            var text = e.target.value;
+            var options = listofSpeciality.options;
+            for (var i = 0; i < options.length; i++) {
+                var option = options[i];
+                var optionText = option.text;
+                var lowerOptionText = optionText.toLowerCase();
+                var lowerText = text.toLowerCase();
+                var regex = new RegExp("^" + text, "i");
+                var match = optionText.match(regex);
+                var contains = lowerOptionText.indexOf(lowerText) != -1;
+                if (match || contains) {
+                    option.selected = true;
+                    return;
+                }
+                searchBox.selectedIndex = 0;
+            }
+        });
+    </script>
 </body>
-
 </html>

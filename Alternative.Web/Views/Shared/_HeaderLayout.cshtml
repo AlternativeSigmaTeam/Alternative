@@ -1,0 +1,31 @@
+﻿@using Alternative.Model.Entities
+@using Microsoft.AspNetCore.Identity
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Alternative.Web</title>
+    
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/course.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" >
+        <link rel="stylesheet" href="~/css/signin.css">
+    </environment>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div id="rectanglehead">
+            <img id="logo" src="~/images/logo.png">
+            <div id="logotext">
+                <h1 style=" font-family:Roboto">ВЫБОР АЛЬТЕРНАТИВ</h1>
+            </div>
+        </div>
+
+    </nav>
+        @RenderBody()
+</body>
+</html>
