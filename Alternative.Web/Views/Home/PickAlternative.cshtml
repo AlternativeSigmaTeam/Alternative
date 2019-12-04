@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Pick Alternative";
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -13,18 +14,16 @@
 
 </head>
 <body>
-    <header>
-        <img class="logo" src="~/images/logo.png">
-        <p class="logoText">ВЫБОР АЛЬТЕРНАТИВ</p>
-
-    </header>
+    <section>
+        <h3>ВЫБОР АЛЬТЕРНАТИВ</h3>
+    </section>
     <content>
         <div class="alternativeBlock">
             <form method="" name="">
                 <div class="alternative">
                     <input type="number" name="" max="5" min="0" class="priority" value="0">
                     <p class="name">APZ</p>
-                    <a class="description" href="/Home/Description">Description</a>
+                    <a class="description" asp-action="Description">Description</a>
                     <a class="teacher" href="">Teacher</a>
                 </div>
                 <button name="" class="saveAlternBtn">Сохранить</button>
