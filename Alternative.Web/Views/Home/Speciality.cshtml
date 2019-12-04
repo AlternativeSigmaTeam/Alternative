@@ -1,6 +1,5 @@
 ﻿@{
     ViewData["Title"] = "Select Speciality";
-    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -16,9 +15,14 @@
 </head>
 
 <body>
+    <header>
+        <img class="logo" src="~/images/logo.png" />
+        <p class="logoText">ВЫБОР АЛЬТЕРНАТИВ</p>
+        <div id="rectanglehead"></div>
+    </header>
 
-<div id="but">
-        <form asp-action="Course">
+    <div id="but">
+        <form action="/Home/Course">
             <input id="button" type="submit" title="Выберите специальность" value="ДАЛЬШЕ">
         </form>
     </div>

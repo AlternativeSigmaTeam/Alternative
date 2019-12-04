@@ -18,31 +18,26 @@ namespace Alternative.Web.Controllers
             return this.View();
         }
 
-        [HttpGet("/speciality")]
         public IActionResult Speciality()
         {
             return this.View();
         }
 
-        [HttpGet("/course")]
         public IActionResult Course()
         {
             return this.View();
         }
 
-        [HttpGet("/alternative")]
         public IActionResult PickAlternative()
         {
             return this.View();
         }
 
-        [HttpGet("/description")]
         public IActionResult Description()
         {
             return this.View();
         }
 
-        [HttpGet("/admin")]
         public IActionResult Admin()
         {
             return this.View();

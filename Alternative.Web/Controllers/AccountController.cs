@@ -202,7 +202,7 @@ namespace Alternative.Web.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            return RedirectToAction("Speciality", "Home");
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
         [HttpPost("signinLogin")]
@@ -224,12 +224,12 @@ namespace Alternative.Web.Controllers
             if (remoteError != null)
             {
                 ErrorMessage = $"Error from external provider: {remoteError}";
-                return RedirectToAction("Speciality", "Home");
+                return RedirectToAction(nameof(Login));
             }
             var info = await _signInManager.GetExternalLoginInfoAsync();
             if (info == null)
             {
-                return RedirectToAction("Speciality", "Home");
+                return RedirectToAction(nameof(Login));
             }
 
             // Sign in the user with this external login provider if the user already has a login.
@@ -291,7 +291,7 @@ namespace Alternative.Web.Controllers
         {
             if (userId == null || code == null)
             {
-                return RedirectToAction("Speciality", "Home");
+                return RedirectToAction(nameof(HomeController.Index), "Home");
             }
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
@@ -326,7 +326,7 @@ namespace Alternative.Web.Controllers
             }
             else
             {
-                return RedirectToAction("Speciality", "Home");
+                return RedirectToAction(nameof(HomeController.Index), "Home");
             }
         }
 
