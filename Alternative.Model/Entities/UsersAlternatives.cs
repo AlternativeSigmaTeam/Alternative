@@ -8,6 +8,9 @@ namespace Alternative.Model.Entities
         
         public Guid AlternativeId { get; set; }
 
+        public short Priority { get; set; }
+
+
         public User User { get;  set; }
 
         public Alternative Alternative { get; set; }

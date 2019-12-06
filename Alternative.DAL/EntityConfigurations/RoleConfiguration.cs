@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Alternative.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Alternative.DAL.DalConstants;
 
 namespace Alternative.DAL.EntityConfigurations
 {
@@ -12,19 +13,10 @@ namespace Alternative.DAL.EntityConfigurations
         {
             builder.ToTable("Role");
 
-            builder.HasData(GetSeedRoles());
-        }
+            builder.HasData(new Role {Id = DalConstants.DalConstants.AdminId, Name = "Admin"});
+            builder.HasData(new Role {Id = DalConstants.DalConstants.StudentId, Name = "Student"});
+            builder.HasData(new Role {Id = DalConstants.DalConstants.TeacherId, Name = "Teacher"});
 
-        private List<Role> GetSeedRoles()
-        {
-            var roles = new List<Role>
-            {
-                new Role {Id = Guid.NewGuid(), Name = "Admin"},
-                new Role {Id = Guid.NewGuid(), Name = "Student"},
-                new Role {Id = Guid.NewGuid(), Name = "Teacher"},
-            };
-
-            return roles;
         }
     }
 }

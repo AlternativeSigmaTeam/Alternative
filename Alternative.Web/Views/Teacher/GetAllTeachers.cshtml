@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Alternative.Web.ViewModels.TeacherViewModel>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetAllTeachers</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TeacherId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LinkKhNure)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.SelectedUser)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TeacherId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LinkKhNure)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Photo)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.SelectedUser)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>

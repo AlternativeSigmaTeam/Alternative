@@ -4,14 +4,16 @@ using Alternative.DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Alternative.DAL.Migrations
 {
     [DbContext(typeof(AlternativeContext))]
-    partial class AlternativeContextModelSnapshot : ModelSnapshot
+    [Migration("20191205100306_sffe")]
+    partial class sffe
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -92,18 +94,18 @@ namespace Alternative.DAL.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("de373e0f-8e9b-4cfb-8369-82ba8c53a88e"),
-                            ConcurrencyStamp = "7273cd58-ed05-44e0-9e23-250d0f9ec604"
+                            Id = new Guid("e698be24-5f37-4bfd-bbee-b3e6f1b7abd8"),
+                            ConcurrencyStamp = "7ae13e96-5b72-4116-a5c9-2dbaab4f87ac"
                         },
                         new
                         {
-                            Id = new Guid("7f67dbea-fe25-43e5-a2d5-1623051f691b"),
-                            ConcurrencyStamp = "5f1d9312-7b0d-419f-879b-0a56dcc0e850"
+                            Id = new Guid("25a5086c-0ee9-4f56-970e-9cb76929cb97"),
+                            ConcurrencyStamp = "c398b081-621b-4610-ba83-aeb6c103e4b6"
                         },
                         new
                         {
-                            Id = new Guid("6da720ea-ec2a-437d-bcf9-4efd7b2438fe"),
-                            ConcurrencyStamp = "a6b29381-c87a-4636-928b-b274ea487877"
+                            Id = new Guid("9ead58a4-cf4c-494f-b06a-378fbf107618"),
+                            ConcurrencyStamp = "2a8cf723-24f6-4008-9c4f-6cbd28c48130"
                         });
                 });
 
@@ -229,8 +231,6 @@ namespace Alternative.DAL.Migrations
                     b.Property<Guid>("AlternativeId");
 
                     b.Property<Guid>("UserId");
-
-                    b.Property<short>("Priority");
 
                     b.HasKey("AlternativeId", "UserId");
 

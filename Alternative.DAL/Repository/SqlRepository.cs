@@ -25,14 +25,15 @@ namespace Alternative.DAL.Repository
         {
 
             var entities = this._set.AsQueryable();
-            if (filter != null)
-            {
-                entities = entities.Where(filter);
-            }
 
             if (includes != null)
             {
                 entities = includes.Aggregate(entities, (current, include) => current.Include(include));
+            }
+
+            if (filter != null)
+            {
+                entities = entities.Where(filter);
             }
 
             if (orderBy != null)

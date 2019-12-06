@@ -1,0 +1,51 @@
+﻿@using Alternative.Model.Enums
+@model Alternative.Web.ViewModels.FilterViewModel
+
+@{
+    ViewData["Title"] = "Select Course";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Выбор курса и семестра</title>
+    <meta name="description" content="Выберите курс и семестр">
+    <link rel="stylesheet" href="~/css/course.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+    <script src="~/js/blockbutton.js"></script>
+</head>
+<body>
+<div id="rectanglehead">
+    <img id="logo" src="~/images/logo.png">
+    <div id="logotext">
+        <h1>ВЫБОР АЛЬТЕРНАТИВ</h1>
+    </div>
+</div>
+<div id="choise">
+    <h1> ВЫБЕРИТЕ ВАШ КУРС:</h1>
+    <form asp-action="GetCourse">
+        @foreach (var item in Model.Courses)
+        {
+            <input type="checkbox" id="hd-1" class="hide" />
+            <label onclick="SelectCourse('@item.Value')" for="hd-1">@item.Text</label>
+            <div>
+                <p> <input asp-for="Semestr" name="Semestr" onclick="EnableSubmit()" type="radio" value="@Semestr.First"> I семестр</p>
+                <p> <input asp-for="Semestr" name="Semestr" onclick="EnableSubmit()" type="radio" value="@Semestr.Second"> II семестр</p>
+            </div>
+            <br>
+            <br>
+        }
+
+        <input type="hidden" id="courseId" asp-for="SelectedCourses"  />
+        <input type="hidden" asp-for="SelectedSpecialty" value="@Model.SelectedSpecialty" />
+        <input id="button" type="submit" value="ПРОСМОТРЕТЬ АЛЬТЕРНАТИВЫ">
+    </form>
+    
+    
+</div>
+
+
+</body>
+</html>
