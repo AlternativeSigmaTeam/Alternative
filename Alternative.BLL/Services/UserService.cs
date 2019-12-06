@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Alternative.BLL.DtoEntities;
 using Alternative.BLL.Interfaces;
 using Alternative.DAL.UnitOfWork;
 using Alternative.Model.Entities;
@@ -24,7 +27,8 @@ namespace Alternative.BLL.Services
 
         public void Edit(User entity)
         {
-            throw new NotImplementedException();
+            _unitOfWork.GetRepository<User>().Edit(entity);
+            _unitOfWork.Commit();
         }
 
         public void Delete(User entity)
@@ -46,6 +50,51 @@ namespace Alternative.BLL.Services
         public User GetUserById(Guid id)
         {
             return _unitOfWork.GetRepository<User>().GetSingle(x => x.Id == id);
+        }
+
+        public IEnumerable<User> GetAllUsers()
+        {
+            return _unitOfWork.GetRepository<User>().GetMany();
+        }
+
+        public IEnumerable<User> GetAllFreeUsers()
+        {
+            var users = _unitOfWork.GetRepository<User>().GetMany();
+            users.ToList().ForEach(x=>x.Teacher = _unitOfWork.GetRepository<Teacher>().GetSingle(w=>w.UserId == x.Id));
+            return users.Where(x => x.Teacher == null);
+        }
+
+        public bool SaveUserAlternativePriority(UserAlternativeDto alternativeDto)
+        {
+            var user = _unitOfWork.GetRepository<User>().GetSingle(x => x.Id == alternativeDto.UserId, x=>x.UsersAlternativeses);
+            var userAlternative = user.UsersAlternativeses.FirstOrDefault(x => x.AlternativeId == alternativeDto.AlternativeId);
+
+            if (userAlternative != null)
+            {
+                user.UsersAlternativeses.FirstOrDefault(x => x.AlternativeId == alternativeDto.AlternativeId).Priority =
+                    alternativeDto.Priority;
+                Edit(user);
+                return true;
+            }
+            else
+            {
+                var listOfUserAlt = user.UsersAlternativeses.ToList();
+
+                listOfUserAlt.Add(new UsersAlternatives
+                {
+
+                    AlternativeId = alternativeDto.AlternativeId,
+                    UserId = alternativeDto.UserId,
+                    Priority = alternativeDto.Priority
+                });
+
+                user.UsersAlternativeses = listOfUserAlt;
+
+                Edit(user);
+                return true;
+            }
+
+            return false;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Alternative.Model.Entities
 {
@@ -9,6 +10,8 @@ namespace Alternative.Model.Entities
         public byte[] Photo { get; set; }
 
         public IEnumerable<Alternative> Alternatives { get; set; }
+
+        public Guid? UserId { get; set; }
 
         public User User { get; set; }
     }

@@ -20,8 +20,6 @@ namespace Alternative.Model.Entities
 
         public Role Role { get; set; }
 
-        public Guid? TeacherId { get; set; }
-
         public Teacher Teacher { get; set; }
     }
 }

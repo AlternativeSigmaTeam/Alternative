@@ -1,4 +1,5 @@
-﻿using Alternative.Model.Entities;
+﻿using System.Collections.Generic;
+using Alternative.Model.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,7 +13,21 @@ namespace Alternative.DAL.EntityConfigurations
 
             builder.HasOne(x => x.User)
                 .WithOne(x => x.Teacher)
-                .HasForeignKey<User>(x => x.TeacherId);
+                .HasForeignKey<Teacher>(x => x.UserId);
+        }
+
+        private List<Teacher> GetSeedTeachers()
+        {
+            var list = new List<Teacher>()
+            {
+                new Teacher()
+                {
+                    Id = DalConstants.DalConstants.UserOneId,
+                    LinkKhNure = "https://trello.com/b/HYtccOhi/alternative-sprint-3"
+                }
+            };
+
+            return list;
         }
     }
 }

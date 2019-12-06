@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Alternative.DAL.DalConstants;
 using Alternative.Model.Entities;
 using GoogleAuth.Models.AccountViewModels;
 using Microsoft.AspNetCore.Authentication;
@@ -266,7 +267,7 @@ namespace Alternative.Web.Controllers
                 {
                     throw new ApplicationException("Error loading external login information during confirmation.");
                 }
-                var user = new User { UserName = model.Email, Email = model.Email, RoleId = new Guid("c5c7231f-f949-4f73-a0d1-6dca851d1bba") };
+                var user = new User { UserName = model.Email, Email = model.Email, RoleId = DalConstants.StudentId };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

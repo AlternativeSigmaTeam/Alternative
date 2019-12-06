@@ -11,6 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20191204153055_AddUserIdToTeacher.cs" />
+    <Compile Remove="Migrations\20191204153055_AddUserIdToTeacher.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Alternative.Model\Alternative.Model.csproj" />
   </ItemGroup>
 

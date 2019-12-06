@@ -1,0 +1,41 @@
+﻿@using System.Security.Cryptography.X509Certificates
+@model Alternative.Web.ViewModels.FilterViewModel
+@{
+    ViewData["Title"] = "Select Speciality";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="~/css/spec.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <script src="~/js/search.js"></script>
+</head>
+
+<body>
+<header>
+    <img class="logo" src="~/images/logo.png" />
+    <p class="logoText">ВЫБОР АЛЬТЕРНАТИВ</p>
+    <div id="rectanglehead"></div>
+</header>
+
+<div id="but">
+    <form asp-action="GetAllSpecialties">
+        <input id="SearchName" asp-for="SelectedSpecialty" name="SearchText" type="hidden">
+        <input id="button" type="submit" title="Выберите специальность" value="ДАЛЬШЕ">
+        
+        <input type="text" onkeyup="myFunction()" id="myInput" placeholder="Поиск специальностей">
+   
+            @Html.DisplayName("")
+            @Html.DropDownListFor(x => x.SelectedSpecialty, Model.Specialties, "Select publisher", new { multiple = "false", onclick="myFunc(this)", size="15" })
+            <span asp-validation-for="Specialties" class="text-danger"></span>
+       </form>
+</div>
+
+</body>
+
+</html>
