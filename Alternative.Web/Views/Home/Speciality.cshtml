@@ -1,4 +1,4 @@
-@{
+﻿@{
     ViewData["Title"] = "Select Speciality";
 }
 
@@ -35,25 +35,24 @@
 <body>
     <header>
         <img class="logo" src="~/images/logo.png" />
-        <p class="logoText">ВЫБОР СПЕЦИАЛЬНОСТИ</p>
+        <p class="logoText">ВЫБОР АЛЬТЕРНАТИВ</p>
         <div id="rectanglehead"></div>
     </header>
     <form action="/Home/Course">
-    <button id="select" disabled="true">Выбор курса</button>
+        <button id="select" disabled="true">Выбор курса</button>
+        <input type="search" id="searchBox" placeholder="Поиск специальности" />
+        <select id="listofSpeciality" style="width:100px; height:400px; font-size: 25pt;" size="15" onclick="Check()">
+            <option onclick="myFunc(this)" value="1">ВПС</option>
+            <option onclick="myFunc(this)" value="2">КН</option>
+            <option onclick="myFunc(this)" value="3">КНТ</option>
+            <option onclick="myFunc(this)" value="4">ПЗС</option>
+            <option onclick="myFunc(this)" value="5">СПР</option>
+            <option onclick="myFunc(this)" value="6">ТДВ</option>
+            <option onclick="myFunc(this)" value="7">ІПЗ</option>
+            <option onclick="myFunc(this)" value="8">ІТП</option>
+            <option onclick="myFunc(this)" value="9">ПІ</option>
+        </select>
     </form>
-    <input type="search" id="searchBox" placeholder="Поиск специальности" />
-
-    <select id="listofSpeciality" size="15" onclick="Check()">
-        <option onclick="myFunc(this)" value="1">ВПС</option>
-        <option onclick="myFunc(this)" value="2">КН</option>
-        <option onclick="myFunc(this)" value="3">КНТ</option>
-        <option onclick="myFunc(this)" value="4">ПЗС</option>
-        <option onclick="myFunc(this)" value="5">СПР</option>
-        <option onclick="myFunc(this)" value="6">ТДВ</option>
-        <option onclick="myFunc(this)" value="7">ІПЗ</option>
-        <option onclick="myFunc(this)" value="8">ІТП</option>
-        <option onclick="myFunc(this)" value="9">ПІ</option>
-    </select>
     <script>
         searchBox = document.querySelector("#searchBox");
         listofSpeciality = document.querySelector("#listofSpeciality");
@@ -80,3 +79,4 @@
     </script>
 </body>
 </html>
+

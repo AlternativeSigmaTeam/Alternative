@@ -22,8 +22,8 @@
     </div>
     <div id="choise">
         <h1> ВЫБЕРИТЕ ВАШ КУРС:</h1>
-        <form>
-            <input type="checkbox"  id="hd-1" class="hide" />
+        <form action="/Home/PickAlternative">
+            <input type="checkbox" id="hd-1" class="hide" />
             <label for="hd-1">ПЗПИ-17</label>
             <div>
                 <p> <input name="sem" onclick="EnableSubmit()" type="radio" value="1"> I семестр</p>
@@ -31,11 +31,9 @@
             </div>
             <br>
             <br>
-        </form>
-    </div>
-
-    <div id="enter">
-        <form action="/Home/PickAlternative">
+        
+    
+        
             <input id="button"  type="submit" disabled="disabled" title="Выберите курс и семестр" value="ПРОСМОТРЕТЬ АЛЬТЕРНАТИВЫ">
         </form>
     </div>
