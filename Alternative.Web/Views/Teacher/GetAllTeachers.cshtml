@@ -1,17 +1,9 @@
 ﻿@model IEnumerable<Alternative.Web.ViewModels.TeacherViewModel>
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>GetAllTeachers</title>
-</head>
-<body>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -52,5 +44,4 @@
 }
     </tbody>
 </table>
-</body>
-</html>
+
