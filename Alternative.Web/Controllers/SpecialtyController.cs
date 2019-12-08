@@ -27,7 +27,6 @@ namespace Alternative.Web.Controllers
         }
 
         [HttpGet("specialties")]
-        //[Authorize(Roles = "Student")]
         public IActionResult GetAllSpecialties()
         {
             var filterViewModel = new FilterViewModel();

@@ -7,6 +7,13 @@ namespace Alternative.Web
 {
     public class Program
     {
+#if DEBUG
+        private const string Environment = "Development";
+
+#else
+        private const string Environment = "Release";
+#endif
+
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
