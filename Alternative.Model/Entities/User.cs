@@ -16,9 +16,7 @@ namespace Alternative.Model.Entities
 
         public IEnumerable<UsersAlternatives> UsersAlternativeses { get; set; }
 
-        public Guid RoleId { get; set; }
-
-        public Role Role { get; set; }
+        public IEnumerable<IdentityUserRole<Guid>> UserRoles { get; set; }
 
         public Teacher Teacher { get; set; }
     }

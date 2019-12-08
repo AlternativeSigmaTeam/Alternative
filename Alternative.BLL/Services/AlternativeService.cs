@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Alternative.BLL.DtoEntities;
 using Alternative.BLL.Interfaces;
@@ -54,13 +55,14 @@ namespace Alternative.BLL.Services
             return alternative;
         }
 
-        public IEnumerable<Model.Entities.Alternative> GetAlternativesByFilter(FilterDto filter)
+        public IEnumerable<Model.Entities.Alternative> GetAlternativesByFilter(FilterDto filter)   //todo сделать так чтобы у каждого юзера была свой список приоритетов
         {
             var alternatives = _unitOfWork.GetRepository<Model.Entities.Alternative>()
                 .GetMany(x => x.AlternativesCourses.Any(w => w.CourseId == filter.SelectedCourses), null, x=>x.Teacher, x=>x.AlternativesCourses, x=>x.Teacher.User, x=>x.UsersAlternatives);
 
             foreach (var alternative in alternatives)
             {
+
                 foreach (var alternativesCourse in alternative.AlternativesCourses)
                 {
                     alternativesCourse.Course = _unitOfWork.GetRepository<Course>()
