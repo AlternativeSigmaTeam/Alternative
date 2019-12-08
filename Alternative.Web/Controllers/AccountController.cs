@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Alternative.DAL.DalConstants;
@@ -58,7 +59,8 @@ namespace Alternative.Web.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("GetAllSpecialties", "Specialty");
+                    //return RedirectToLocal(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -212,7 +214,7 @@ namespace Alternative.Web.Controllers
         public async Task<IActionResult> ExternalLogin(string provider, string returnUrl = null)
         {
             // Request a redirect to the external login provider.
-            var redirectUrl = Url.Action(nameof(ExternalLoginCallback), "Account", new { returnUrl });
+            var redirectUrl = Url.Action("GetAllSpecialties", "Specialty", new { returnUrl });
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
 
             return Challenge(properties, provider);
@@ -267,7 +269,18 @@ namespace Alternative.Web.Controllers
                 {
                     throw new ApplicationException("Error loading external login information during confirmation.");
                 }
-                var user = new User { UserName = model.Email, Email = model.Email, RoleId = DalConstants.StudentId };
+                var user = new User
+                {
+                    UserName = model.Email,
+                    Email = model.Email,
+                    UserRoles = new List<IdentityUserRole<Guid>>()
+                    {
+                        new IdentityUserRole<Guid>
+                        {
+                            RoleId = DalConstants.StudentId
+                        }
+                    }
+                };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

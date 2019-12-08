@@ -32,10 +32,12 @@ namespace Alternative.Web.Controllers
         [HttpGet("alternatives")]
         public IActionResult GetAllAlternatives(FilterViewModel filter)
         {
-            var test = _alternativeService
-                .GetAlternativesByFilter(_mapper.Map<FilterViewModel, FilterDto>(filter));
+            var filterDto = _mapper.Map<FilterViewModel, FilterDto>(filter);
 
-            var alternatives =_mapper.Map<IEnumerable<Model.Entities.Alternative>, IEnumerable<AlternativeViewModel>>(test);
+            filterDto.UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            var alternatives =_mapper.Map<IEnumerable<Model.Entities.Alternative>, IEnumerable<AlternativeViewModel>>(_alternativeService
+                .GetAlternativesByFilter(filterDto));
             var alternativeFilterViewModel = new AlternativeFilterViewModel
             {
                 Alternatives = alternatives,

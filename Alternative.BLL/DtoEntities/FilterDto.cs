@@ -13,5 +13,6 @@ namespace Alternative.BLL.DtoEntities
 
         public Semestr Semestr { get; set; }
 
+        public Guid UserId { get; set; }
     }
 }
