@@ -1,4 +1,6 @@
-
+body {
+    margin: 0;
+}
 #rectanglehead {
     width: 100%;
     height: 146px;
@@ -7,26 +9,23 @@
 }
 
 .logo {
+    display: block;
+    position: absolute;
+    margin-left: 10%;
     width: 90px;
+    margin-top: 20px;
 }
-
 .logoText {
-    display: inline-block;
-    color: #fff;
-    font-weight: 600;
-    font-size: 32px;
-}
-
-#listofSpeciality {
-    border: none;
+    display: block;
+    position: absolute;
+    margin-left: 18%;
     width: 20%;
-    font-size: x-large;
-    margin-top: 3%;
-    margin-left: 15%;
-    overflow: hidden;
+    font-family: Roboto, sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
 }
     
-
 #searchBox {
     width: 300px;
     height: 4%;
@@ -38,128 +37,76 @@
     position: absolute;
 }
 
-#select {
-    position: absolute;
-    background: #004660;
-    color: white;
-    padding: 1rem 1.5rem;
-    text-decoration: none;
-    border-radius: 3px;
-    margin-left: 45%;
-    margin-top: 200px;
-    width: 150px;
+#drop {
+    margin-top:3%;
     text-align: center;
-    opacity: 50%;
+    overflow: hidden;
+}
+
+#bb{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#bt {
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#select {
+    border: 1px solid;
+    border-radius: 40px;
+    min-width: 150px;
+    padding: 10%;
     outline: none;
-    border-radius: 30px;
+    width: 100%;
+    background-color: #004660;
+    font-family: 'Roboto', 'Avenir Heavy', 'Avenir Book', 'Avenir';
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 20px;
 }
 
-@media (min-width:320px) {
-
-    .logoText {
-        font-size: 12px;
-    }
-
-    .nav, .navbar-nav {
-        background-color: #004660;
-        z-index: 999;
-        position: relative;
-    }
-
-    .logo {
-        display: none;
-    }
-
-    .navbar-toggle .icon-bar + .icon-bar, .navbar-toggle .icon-bar {
-        background-color: #004660;
-    }
-
-    .navbar-toggle {
-        background-color: #fff;
-    }
-
-    .navbar-collapse.in {
-        overflow: hidden;
-    }
+#select:active {
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
 }
 
-
-@media (min-width:640px) {
-
-    .logoText {
-        display: inline-block;
-        color: #fff;
-        font-weight: 600;
-        font-size: 32px;
-    }
-
-    .logo {
-        display: inline-block;
-        width: 90px;
-    }
+#but{
+padding-top: 7%;
+padding-bottom: 10%;
 }
 
-@media (min-width: 1050px) and (max-width: 1500px) {
-   
-    #select {
-        position: absolute;
-        background: #004660;
-        color: white;
-        padding: 1rem 1.5rem;
-        text-decoration: none;
+.dropblock {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#SelectedSpacialty{
+    overflow:hidden;
+    width: 100%;
+}
+.dropblock select {
+
+    overflow: hidden;
+    border: none;
+    width: 100%;
+    outline: none;
+}
+
+    .dropblock select option {
+        padding: 7%;
         border-radius: 3px;
-        margin-left: 45%;
-        margin-top: 200px;
-        width: 150px;
         text-align: center;
-        opacity: 50%;
-        border-radius: 30px;
+        margin-bottom: 3%;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 30px;
+        font-weight: 500;
+        font-size: 30px;
+        outline: none;
+        color: #333333;
+        background-color: #13022314
     }
-
-
-    #searchBox {
-        width: 300px;
-        height: 4%;
-        font-size: 100%;
-        padding: 0.1% 0.1% 0.3% 0.3%;
-        border: 0.1% solid #ddd;
-        margin-left: 39%;
-        margin-top: 50px;
-        position: absolute;
-    }
-}
-
-@media (max-width: 1049px) {
-
-    #select {
-        position: absolute;
-        background: #004660;
-        color: white;
-        padding: 1rem 1.5rem;
-        text-decoration: none;
-        border-radius: 3px;
-        margin-left: 55%;
-        margin-top: 15%;
-        width: 150px;
-        text-align: center;
-        border-radius: 30px;
-    }
-
-    #listofSpeciality {
-        border: none;
-        width: 40%;
-        font-size: 120%;
-        margin-left: 10%;
-    }
-    
-    #searchBox {
-        width: 25%;
-        height: 4%;
-        font-size: 100%;
-        padding: 0.1% 0.1% 0.3% 0.3%;
-        border: 0.1% solid #ddd;
-        margin-left: 52%;
-        margin-top: 50px;
-        position: absolute;
-    }
-}
