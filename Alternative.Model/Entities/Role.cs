@@ -8,7 +8,5 @@ namespace Alternative.Model.Entities
     {
         public string Name { get; set; }
 
-        public IEnumerable<IdentityUserRole<Guid>> UserRoles { get; set; }
-
     }
 }
