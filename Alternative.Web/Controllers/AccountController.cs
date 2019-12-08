@@ -59,8 +59,8 @@ namespace Alternative.Web.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    //return RedirectToAction("GetAllSpecialties", "Specialty");
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction("GetAllSpecialties", "Specialty");
+                    //return RedirectToLocal(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
                 {
@@ -335,7 +335,7 @@ namespace Alternative.Web.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction("GetAllSpecialties", "Specialty");
             }
         }
 

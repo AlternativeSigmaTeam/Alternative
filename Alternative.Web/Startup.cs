@@ -29,8 +29,7 @@ namespace Alternative.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            //var connection = Configuration.GetConnectionString("AlternativeConnection");
-            var connection = @"Server=EPUAKHAW0861;Database=AlternativeDbTEST;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = "Server=tcp:alternative.database.windows.net,1433;Initial Catalog=alternativeDb;Persist Security Info=False;User ID=alternativeAdmim;Password=osfjs32423A;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             services.AddDbContext<AlternativeContext>(options => options.UseSqlServer(connection));
 
             services.AddIdentity<User, Role>()
