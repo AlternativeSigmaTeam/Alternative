@@ -54,7 +54,8 @@ namespace Alternative.Web.Controllers
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
-                StatusMessage = StatusMessage
+                StatusMessage = StatusMessage,
+                FullName = user.FullName,
             };
 
             return View(model);

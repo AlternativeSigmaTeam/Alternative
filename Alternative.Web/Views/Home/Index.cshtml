@@ -1,8 +1,22 @@
-﻿
+﻿@using Alternative.Model.Entities
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
 @{
     ViewData["Title"] = "Index";
     Layout = "_Layout";
 }
 
-<h2>Welcome to Alternative portal!</h2>
+@if (SignInManager.IsSignedIn(User))
+{
+    <h3>Hello, @UserManager.GetUserName(User)!</h3>
+    <h2>Welcome to Alternative portal!</h2>
 
+}
+else
+{
+    <h2>Welcome to Alternative portal!</h2>
+    <h3>Please, <a asp-area="" asp-controller="Account" asp-action="Login">Log in</a></h3>
+}
