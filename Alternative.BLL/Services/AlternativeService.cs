@@ -55,21 +55,28 @@ namespace Alternative.BLL.Services
             return alternative;
         }
 
-        public IEnumerable<Model.Entities.Alternative> GetAlternativesByFilter(FilterDto filter)   //todo сделать так чтобы у каждого юзера была свой список приоритетов
+        public IEnumerable<Model.Entities.Alternative> GetAlternativesByFilter(FilterDto filter)
         {
             var alternatives = _unitOfWork.GetRepository<Model.Entities.Alternative>()
-                .GetMany(x => x.AlternativesCourses.Any(w => w.CourseId == filter.SelectedCourses), null, x=>x.Teacher, x=>x.AlternativesCourses, x=>x.Teacher.User, x=>x.UsersAlternatives);
+                .GetMany(x=> x.AlternativesCourses.Any(w => w.CourseId == filter.SelectedCourses), null, x=>x.Teacher, x=>x.AlternativesCourses, x=>x.Teacher.User, x=>x.UsersAlternatives);
 
             foreach (var alternative in alternatives)
             {
-
                 foreach (var alternativesCourse in alternative.AlternativesCourses)
                 {
                     alternativesCourse.Course = _unitOfWork.GetRepository<Course>()
                         .GetSingle(x => x.Id == filter.SelectedCourses);
                 }
+
+                foreach (var user in alternative.UsersAlternatives)
+                {
+                    if (user.UserId != filter.UserId)
+                    {
+                        user.Priority = 0;
+                    }
+                }
             }
-            
+
             return alternatives.Where(x=>x.AlternativesCourses.Any(w=>w.Course.Semestr == filter.Semestr));
         }
     }
