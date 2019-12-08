@@ -231,6 +231,7 @@ namespace Alternative.Web.Controllers
                 return RedirectToAction(nameof(Login));
             }
             var info = await _signInManager.GetExternalLoginInfoAsync();
+            
             if (info == null)
             {
                 return RedirectToAction(nameof(Login));
@@ -253,7 +254,13 @@ namespace Alternative.Web.Controllers
                 ViewData["ReturnUrl"] = returnUrl;
                 ViewData["LoginProvider"] = info.LoginProvider;
                 var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-                return View("ExternalLogin", new ExternalLoginViewModel { Email = email });
+
+                if (email.EndsWith("@nure.ua"))
+                {
+                    return View("ExternalLogin", new ExternalLoginViewModel { Email = email });
+                }
+                
+                return RedirectToAction("Error", "Home", new { err = "You can login only with @nure.ua domain."});
             }
         }
 
@@ -270,13 +277,17 @@ namespace Alternative.Web.Controllers
                 {
                     throw new ApplicationException("Error loading external login information during confirmation.");
                 }
+
                 var user = new User
                 {
+                    FullName = info.Principal.Identity.Name,
                     UserName = model.Email,
                     Email = model.Email,
                     RoleId = DalConstants.StudentId
                 };
+
                 var result = await _userManager.CreateAsync(user);
+
                 if (result.Succeeded)
                 {
                     result = await _userManager.AddLoginAsync(user, info);
@@ -287,6 +298,7 @@ namespace Alternative.Web.Controllers
                         return RedirectToLocal(returnUrl);
                     }
                 }
+
                 AddErrors(result);
             }
 

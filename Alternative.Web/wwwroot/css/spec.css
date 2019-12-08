@@ -7,22 +7,14 @@
 }
 
 .logo {
-    display: block;
-    position: absolute;
-    margin-left: 10%;
     width: 90px;
-    margin-top: 20px;
 }
 
 .logoText {
-    display: block;
-    position: absolute;
-    margin-left: 18%;
-    width: 20%;
-    font-family: Roboto, sans-serif;
-    color: white;
-    font-size: 30px;
+    display: inline-block;
+    color: #fff;
     font-weight: 600;
+    font-size: 32px;
 }
 
 #listofSpeciality {
@@ -62,8 +54,50 @@
     border-radius: 30px;
 }
 
+@media (min-width:320px) {
+
+    .logoText {
+        font-size: 12px;
+    }
+
+    .nav, .navbar-nav {
+        background-color: #004660;
+        z-index: 999;
+        position: relative;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .navbar-toggle .icon-bar + .icon-bar, .navbar-toggle .icon-bar {
+        background-color: #004660;
+    }
+
+    .navbar-toggle {
+        background-color: #fff;
+    }
+
+    .navbar-collapse.in {
+        overflow: hidden;
+    }
+}
 
 
+@media (min-width:640px) {
+
+    .logoText {
+        display: inline-block;
+        color: #fff;
+        font-weight: 600;
+        font-size: 32px;
+    }
+
+    .logo {
+        display: inline-block;
+        width: 90px;
+    }
+}
 
 @media (min-width: 1050px) and (max-width: 1500px) {
    
@@ -96,17 +130,6 @@
 }
 
 @media (max-width: 1049px) {
-
-    .logoText {
-        display: block;
-        position: absolute;
-        margin-left: 30%;
-        width: 20%;
-        font-family: Roboto, sans-serif;
-        color: white;
-        font-size: 30px;
-        font-weight: 600;
-    }
 
     #select {
         position: absolute;

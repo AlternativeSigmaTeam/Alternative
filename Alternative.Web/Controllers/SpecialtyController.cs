@@ -19,7 +19,7 @@ namespace Alternative.Web.Controllers
         private readonly ICourseService _courseService;
         private readonly IMapper _mapper;
 
-        public SpecialtyController(ISpecialtyService specialtyService, ICourseService courseService,IMapper mapper)
+        public SpecialtyController(ISpecialtyService specialtyService, ICourseService courseService, IMapper mapper)
         {
             _courseService = courseService;
             _specialtyService = specialtyService;
