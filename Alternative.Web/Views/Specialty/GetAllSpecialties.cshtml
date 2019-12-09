@@ -17,24 +17,38 @@
 </head>
 
 <body>
-<header>
-    <img class="logo" src="~/images/logo.png" />
-    <p class="logoText">ВЫБОР АЛЬТЕРНАТИВ</p>
-    <div id="rectanglehead"></div>
-</header>
+    <header>
+        <img class="logo" src="~/images/logo.png" />
+        <p class="logoText">ВЫБОР АЛЬТЕРНАТИВ</p>
+        <div id="rectanglehead"></div>
+    </header>
 
-<div id="but">
-    <form asp-action="GetAllSpecialties">
-        <input id="SearchName" asp-for="SelectedSpecialty" name="SearchText" type="hidden">
-        <input id="button" type="submit" title="Выберите специальность" value="ДАЛЬШЕ">
-        
-        <input type="text" onkeyup="myFunction()" id="myInput" placeholder="Поиск специальностей">
-   
-            @Html.DisplayName("")
-            @Html.DropDownListFor(x => x.SelectedSpecialty, Model.Specialties, "Select publisher", new { multiple = "false", onclick="myFunc(this)", size="15" })
-            <span asp-validation-for="Specialties" class="text-danger"></span>
-       </form>
-</div>
+    <div id="but">
+        <form asp-action="GetAllSpecialties">
+            <div class="dropblock">
+                <div class="droplist">
+                    @Html.DisplayName("")
+                    @Html.DropDownListFor(x => x.SelectedSpecialty, Model.Specialties, new { multiple = "true", onclick = "myFunc(this)", size = "4" })
+
+                    <span asp-validation-for="Specialties" class="text-danger"></span>
+                </div>
+
+
+            </div>
+
+            <div id="bb">
+                <div id="bt">
+                    <input id="SearchName" asp-for="SelectedSpecialty" name="SearchText" type="hidden">
+                    <input id="select" type="submit" title="Выберите специальность" value="ДАЛЬШЕ">
+                </div>
+            </div>
+
+
+
+
+
+        </form>
+    </div>
 
 </body>
 
