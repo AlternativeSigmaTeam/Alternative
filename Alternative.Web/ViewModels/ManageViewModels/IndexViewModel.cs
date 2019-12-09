@@ -16,6 +16,8 @@ namespace GoogleAuth.Models.ManageViewModels
         [Display(Name = "Phone number")]
         public string PhoneNumber { get; set; }
 
+        public string FullName { get; set; }
+
         public string StatusMessage { get; set; }
     }
 }

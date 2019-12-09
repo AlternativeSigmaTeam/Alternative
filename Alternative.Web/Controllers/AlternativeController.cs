@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -34,12 +34,9 @@ namespace Alternative.Web.Controllers
         {
             var filterDto = _mapper.Map<FilterViewModel, FilterDto>(filter);
 
-           if (User.Identity.IsAuthenticated != false)
-           {
-                filterDto.UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-           }
+            filterDto.UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-           var alternatives =_mapper.Map<IEnumerable<Model.Entities.Alternative>, IEnumerable<AlternativeViewModel>>(_alternativeService
+            var alternatives =_mapper.Map<IEnumerable<Model.Entities.Alternative>, IEnumerable<AlternativeViewModel>>(_alternativeService
                 .GetAlternativesByFilter(filterDto));
             var alternativeFilterViewModel = new AlternativeFilterViewModel
             {
