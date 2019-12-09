@@ -1,54 +1,80 @@
-﻿@using System.Security.Cryptography.X509Certificates
-@model Alternative.Web.ViewModels.FilterViewModel
+@model Alternative.Web.ViewModels.DomainEntitysViewModel.AlternativeFilterViewModel
+
 @{
-    ViewData["Title"] = "Select Speciality";
+    ViewData["Title"] = "Pick Alternative";
 }
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="~/css/spec.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
-    <script src="~/js/search.js"></script>
-</head>
+    <meta charset="UTF-8">
+    <title>Alternative</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="~/css/main.css">
+
+</head>
 <body>
 <header>
-    <img class="logo" src="~/images/logo.png" />
+    <img class="logo" src="~/images/logo.png">
     <p class="logoText">ВЫБОР АЛЬТЕРНАТИВ</p>
-    <div id="rectanglehead"></div>
+
 </header>
+<content>
+    <div class="alternativeBlock" id="alternatives-holder">
+        @foreach (var item in Model.Alternatives)
+        {
+            <form asp-action="GetAllAlternatives" data-alternativeForm="">
+                <input type="hidden" id="AlId" asp-for="@item.Id" value="@item.Id" />
+                <div class="alternative">
+                    <input type="number" asp-for="@item.Priority" max="5" min="0" value="@item.Priority" class="priority" data-priorityInput="priority">
+                    <p class="name">@item.Name</p>
+                    <a class="description" href="/Home/Description">Description</a>
+                    <a class="teacher" href="">@item.Teacher.User.FullName</a>
+                </div>
+            </form>
+        }
+        <input type="hidden" id ="selectedSpecialty" asp-for="@Model.SelectedSpecialty" />
+        <input type="hidden" id ="selectedSemestr" asp-for="@Model.Semestr" />
+        <input type="hidden" id ="selectedCourse" asp-for="@Model.SelectedCourses" />
+    </div>
+</content>
 
-<div id="but">
-    <form asp-action="GetAllSpecialties">
-        <div class="dropblock">
-            <div class="droplist">
-                @Html.DisplayName("")
-                @Html.DropDownListFor(x => x.SelectedSpecialty, Model.Specialties, new { multiple = "true", onclick = "myFunc(this)", size = "4" })
+<script>
+    var selectedSpecialty = document.getElementById("selectedSpecialty").value;
+    var selectedSemestr = document.getElementById("selectedSemestr").value;
+    var selectedCourse = document.getElementById("selectedCourse").value;
 
-                <span asp-validation-for="Specialties" class="text-danger"></span>
-            </div>
-           
-           
-        </div>
+    var alternativesHolder = document.getElementById("alternatives-holder");
+    alternativesHolder.addEventListener("change", function (event) {
+        if (event.target.dataset.priorityinput) {
+            let form = event.target.closest("[data-alternativeForm]");
+            let value = event.target.closest(".priority").value;
+            console.log(form.firstElementChild);
+            let url = "alternatives";
+            let item = {
+                Id : form.firstElementChild.value,
+                Priority: value,
+                SelectedSpecialty: selectedSpecialty,
+                SelectedCourses: selectedCourse,
+                Semestr : selectedSemestr
+            };
+            changeNumberOfOrderDetails(item);
+        }
+    });
 
-        <div id="bb">
-            <div id="bt">
-                <input id="SearchName" asp-for="SelectedSpecialty" name="SearchText" type="hidden">
-                <input id="select" type="submit" title="Выберите специальность" value="ДАЛЬШЕ">
-            </div>
-        </div>
-     
-            
-      
-            
-       
-    </form>
-</div>
+
+    function changeNumberOfOrderDetails(item) {
+        fetch("alternatives",
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(item)
+            });
+    }
+</script>
 
 </body>
-
 </html>
