@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
@@ -33,19 +33,11 @@ namespace Alternative.Web.Controllers
         public IActionResult GetAllAlternatives(FilterViewModel filter)
         {
             var filterDto = _mapper.Map<FilterViewModel, FilterDto>(filter);
-            
-            filterDto.UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-            
-            var alternatives =_mapper.Map<IEnumerable<Model.Entities.Alternative>, IEnumerable<AlternativeViewModel>>(_alternativeService.GetAlternativesByFilter(filterDto));
-            
-           if (User.Identity.IsAuthenticated != false)
-           {
-                filterDto.UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
-           }
 
-           var alternatives =_mapper.Map<IEnumerable<Model.Entities.Alternative>, IEnumerable<AlternativeViewModel>>(_alternativeService
+            filterDto.UserId = Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+            var alternatives =_mapper.Map<IEnumerable<Model.Entities.Alternative>, IEnumerable<AlternativeViewModel>>(_alternativeService
                 .GetAlternativesByFilter(filterDto));
-                
             var alternativeFilterViewModel = new AlternativeFilterViewModel
             {
                 Alternatives = alternatives,
