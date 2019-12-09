@@ -1,10 +1,27 @@
-﻿@using System.Security.Cryptography.X509Certificates
+@using System.Security.Cryptography.X509Certificates
 @model Alternative.Web.ViewModels.FilterViewModel
 @{
     ViewData["Title"] = "Select Speciality";
-    Layout = "_Layout";
 }
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="~/css/spec.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <script src="~/js/search.js"></script>
+</head>
+
+<body>
+<header>
+    <img class="logo" src="~/images/logo.png" />
+    <p class="logoText">ВЫБОР АЛЬТЕРНАТИВ</p>
+    <div id="rectanglehead"></div>
+</header>
 
 <div id="but">
     <form asp-action="GetAllSpecialties">
@@ -22,7 +39,7 @@
         <div id="bb">
             <div id="bt">
                 <input id="SearchName" asp-for="SelectedSpecialty" name="SearchText" type="hidden">
-                <input id="select" type="submit" title="Выбор специальности" value="ДАЛЬШЕ">
+                <input id="select" type="submit" title="Выберите специальность" value="ДАЛЬШЕ">
             </div>
         </div>
      
@@ -32,3 +49,7 @@
        
     </form>
 </div>
+
+</body>
+
+</html>
